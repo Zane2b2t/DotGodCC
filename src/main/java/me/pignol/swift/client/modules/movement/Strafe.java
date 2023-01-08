@@ -3,7 +3,7 @@ package me.pignol.swift.client.modules.movement;
 
 import java.util.Objects;
 
-import me.pignol.swift.client.event.events.MoveEvent;
+import me.pignol.swift.client.event.events.MoveEvent2;
 import me.pignol.swift.client.modules.Module;
 
 import net.minecraft.potion.Potion;
@@ -15,7 +15,7 @@ public class Strafe
 extends Module {
     
     @Subscribe
-    public void onMotion(MoveEvent event) {
+    public void onMotion(MoveEvent2 event) {
         if (!(this.mc.player.isSneaking() || this.mc.player.isInWater() || this.mc.player.isInLava() || this.mc.player.movementInput.moveForward == 0.0f && this.mc.player.movementInput.moveStrafe == 0.0f)) {
             MovementInput movementInput = this.mc.player.movementInput;
             float moveForward = movementInput.moveForward;
