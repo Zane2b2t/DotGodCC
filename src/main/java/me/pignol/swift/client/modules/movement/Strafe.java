@@ -1,5 +1,5 @@
 
-package me.hollow.trollgod.client.modules.movement;
+package me.pignol.swift.client.modules.movement;
 
 import java.util.Objects;
 
