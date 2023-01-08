@@ -5,7 +5,6 @@ import java.util.Objects;
 
 import me.pignol.swift.client.event.events.MoveEvent;
 import me.pignol.swift.client.modules.Module;
-import me.pignol.swift.client.modules.ModuleManifest;
 
 import net.minecraft.potion.Potion;
 import net.minecraft.util.MovementInput;
