@@ -8,7 +8,7 @@ public final class MoveEvent2 extends Event
     private double motionY;
     private double motionZ;
     
-    public MoveEvent(final double motionX, final double motionY, final double motionZ) {
+    public MoveEvent2(final double motionX, final double motionY, final double motionZ) {
         this.motionX = motionX;
         this.motionY = motionY;
         this.motionZ = motionZ;
