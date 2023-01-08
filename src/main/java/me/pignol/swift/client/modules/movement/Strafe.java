@@ -14,6 +14,7 @@ import net.minecraft.util.MovementInput;
 public class Strafe
 extends Module {
     
+    @Subscribe
     public void onMotion(MoveEvent event) {
         if (!(this.mc.player.isSneaking() || this.mc.player.isInWater() || this.mc.player.isInLava() || this.mc.player.movementInput.moveForward == 0.0f && this.mc.player.movementInput.moveStrafe == 0.0f)) {
             MovementInput movementInput = this.mc.player.movementInput;
