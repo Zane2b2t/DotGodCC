@@ -1,6 +1,7 @@
 package me.pignol.swift.client.event.events;
 
 import net.minecraft.entity.MoverType;
+import net.minecraftforge.fml.common.eventhandler.Event;
 
 public class MoveEvent2 extends Event {
     public double motionX;
