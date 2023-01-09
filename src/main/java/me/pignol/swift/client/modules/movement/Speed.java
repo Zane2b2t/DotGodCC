@@ -3,6 +3,7 @@ package me.pignol.swift.client.modules.movement;
 import me.pignol.swift.client.event.EventListener;
 import me.pignol.swift.client.event.events.KeyEvent;
 import me.pignol.swift.client.event.events.MoveEvent2;
+import me.pignol.swift.api.value.Value;
 // command import was here
 import me.pignol.swift.client.modules.Module;
 //import me.pignol.swift.api.util.EntityUtil;
@@ -19,7 +20,7 @@ public class Speed extends Module {
 
 
     @EventListener
-    public void onMove(final MoveEvent event) {
+    public void onMove(final MoveEvent2 event) {
         if (mode.getValue().equals("OnGround")) {
             switch (currentState) {
                 case 0:
