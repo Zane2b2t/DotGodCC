@@ -1,6 +1,6 @@
 package me.pignol.swift.client.event.events;
 
-//import me.zane.grassware.event.bus.Event;
+import net.minecraftforge.fml.common.eventhandler.Event;
 
 public class KeyEvent extends Event {
     public final int key;
