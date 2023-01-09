@@ -17,6 +17,10 @@ public class Speed extends Module {
     private Value<Mode> mode = (new Value("OnGround", Mode.Strafe));
     private double previousDistance, motionSpeed;
     private int currentState = 1;
+    
+    private enum Mode {
+        STRAFE, ONGROUND
+    }
 
 
     @EventListener
