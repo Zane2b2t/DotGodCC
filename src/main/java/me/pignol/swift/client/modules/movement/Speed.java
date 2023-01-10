@@ -6,7 +6,7 @@ import me.pignol.swift.client.event.events.MoveEvent2;
 import me.pignol.swift.api.value.Value;
 // command import was here
 import me.pignol.swift.client.modules.Module;
-//import me.pignol.swift.api.util.EntityUtil;
+//import me.pignol.swift.api.util.EntityUtil2;
 import net.minecraft.init.MobEffects;
 import net.minecraft.util.MovementInput;
 
