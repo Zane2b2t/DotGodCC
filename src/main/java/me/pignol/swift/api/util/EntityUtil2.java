@@ -16,7 +16,7 @@ public class EntityUtil2 implements Globals {
         final TreeMap<Float, EntityPlayer> map = new TreeMap<>();
         mc.world.playerEntities.stream().filter(e -> !e.equals(mc.player) && !e.isDead).forEach(entityPlayer -> {
             final float distance = entityPlayer.getDistance(mc.player);
-            if (distance < range && !GrassWare.friendManager.isFriend(entityPlayer.getName())) {
+            if (distance < range && !Swift.friendManager.isFriend(entityPlayer.getName())) {
                 map.put(distance, entityPlayer);
             }
         });
