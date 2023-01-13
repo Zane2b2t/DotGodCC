@@ -6,7 +6,7 @@ import me.pignol.swift.client.event.events.MoveEvent2;
 import me.pignol.swift.api.value.Value;
 // command import was here
 import me.pignol.swift.client.modules.Module;
-//import me.pignol.swift.api.util.EntityUtil2;
+import me.pignol.swift.api.util.EntityUtil2;
 import net.minecraft.init.MobEffects;
 import net.minecraft.util.MovementInput;
 
@@ -25,7 +25,7 @@ public class Speed extends Module {
 
     @EventListener
     public void onMove(final MoveEvent2 event) {
-        if (mode.getValue().equals("OnGround")) {
+        if (mode.getValue().equals("Strafe")) {
             switch (currentState) {
                 case 0:
                     ++currentState;
