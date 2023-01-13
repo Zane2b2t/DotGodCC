@@ -49,9 +49,9 @@ public class Speed extends Module {
                     }
                     break;
                 case 3:
-                    motionSpeed = previousDistance - 0.76f * (previousDistance - EntityUtil.getBaseMotionSpeed() * 1.05f);
+                    motionSpeed = previousDistance - 0.76f * (previousDistance - EntityUtil2.getBaseMotionSpeed() * 1.05f);
             }
-            motionSpeed = Math.max(motionSpeed, EntityUtil.getBaseMotionSpeed() * 1.05f);
+            motionSpeed = Math.max(motionSpeed, EntityUtil2.getBaseMotionSpeed() * 1.05f);
             double forward = mc.player.movementInput.moveForward;
             double strafe = mc.player.movementInput.moveStrafe;
             double yaw = mc.player.rotationYaw;
@@ -86,8 +86,8 @@ public class Speed extends Module {
                     moveStrafe = moveStrafe == 0.0f ? moveStrafe : (moveStrafe > 0.0 ? 1.0f : -1.0f);
                     final double cos = Math.cos(Math.toRadians(rotationYaw + 90.0f));
                     final double sin = Math.sin(Math.toRadians(rotationYaw + 90.0f));
-                    event.setMotionX(moveForward * EntityUtil.getMaxSpeed() * cos + moveStrafe * EntityUtil.getMaxSpeed() * sin);
-                    event.setMotionZ(moveForward * EntityUtil.getMaxSpeed() * sin - moveStrafe * EntityUtil.getMaxSpeed() * cos);
+                    event.setMotionX(moveForward * EntityUtil2.getMaxSpeed() * cos + moveStrafe * EntityUtil2.getMaxSpeed() * sin);
+                    event.setMotionZ(moveForward * EntityUtil2.getMaxSpeed() * sin - moveStrafe * EntityUtil2.getMaxSpeed() * cos);
                 }
             }
         }
