@@ -6,6 +6,11 @@ import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPacketEntityAction;
+import net.minecraft.network.play.client.CPacketUseEntity;
+import net.minecraft.util.EnumHand;
 
 import java.util.List;
 
@@ -22,6 +27,7 @@ public class EntityUtil implements Globals {
     public static EntityPlayer getClosestPlayer(double range, boolean unsafe) {
         return getClosestPlayer(range, unsafe, mc.world.playerEntities);
     }
+    
 
     public static EntityPlayer getClosestPlayer(double range, final boolean unsafe, final List<EntityPlayer> players) {
         range *= range;
@@ -86,6 +92,42 @@ public class EntityUtil implements Globals {
         }
 
         return target;
+    }
+
+    public static void attackEntity(Entity entity, boolean packet, boolean swingArm) {
+        if (packet) {
+            mc.player.connection.sendPacket(new CPacketUseEntity(entity));
+        } else {
+            mc.playerController.attackEntity(mc.player, entity);
+        }
+
+        if (swingArm) {
+            mc.player.swingArm(EnumHand.MAIN_HAND);
+        }
+    }
+    
+    
+       public static void OffhandAttack(Entity entity, boolean packet, boolean swingArm) {
+        if (packet) {
+            EntityUtil.mc.player.connection.sendPacket((Packet) new CPacketUseEntity(entity));
+        } else {
+            EntityUtil.mc.playerController.attackEntity((EntityPlayer) EntityUtil.mc.player, entity);
+        }
+        if (swingArm) {
+            EntityUtil.mc.player.swingArm(EnumHand.OFF_HAND);
+        }
+    }
+    
+        public static void swingArmNoPacket(EnumHand hand, EntityLivingBase entity) {
+        ItemStack stack = entity.getHeldItem(hand);
+        if (!stack.isEmpty() && stack.getItem().onEntitySwing(entity, stack)) {
+            return;
+        }
+        if (!entity.isSwingInProgress || entity.swingProgressInt >= ((IEntityLivingBase) entity).getArmSwingAnimationEnd() / 2 || entity.swingProgressInt < 0) {
+            entity.swingProgressInt = -1;
+            entity.isSwingInProgress = true;
+            entity.swingingHand = hand;
+        }
     }
 
     public static boolean isDead(final Entity entity) {
