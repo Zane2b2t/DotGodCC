@@ -10,6 +10,7 @@ import me.pignol.swift.client.modules.movement.*;
 import me.pignol.swift.client.modules.other.*;
 import me.pignol.swift.client.modules.player.*;
 import me.pignol.swift.client.modules.render.*;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -43,7 +44,7 @@ public class ModuleManager {
         addModule(AuraModule.INSTANCE);
         addModule(new Auto32k());
         addModule(new AutoNomadHut());
-        addModule(new AutoCrystal());
+        addModule(new AutoCrystalElite());
         addModule(new FencerModule());
         addModule(new AntiRegear());
         addModule(new AutoArmor());
@@ -68,14 +69,12 @@ public class ModuleManager {
         addModule(NoInterpolationModule.INSTANCE);
         addModule(CrosshairModule.INSTANCE);
         addModule(AspectRatio.INSTANCE);
-        //addModule(ChamsModule.INSTANCE);
         addModule(HeadRotations.INSTANCE);
         addModule(ViewClipModule.INSTANCE);
         addModule(Chams.INSTANCE);
         addModule(NoArmorRender.getInstance());
         addModule(NoBob.getInstance());
         addModule(new ChunkFinder());
-        //addModule(new Search());
         addModule(new Freecam());
         addModule(new EntityESP());
         addModule(new BlockHighlight());
@@ -124,6 +123,7 @@ public class ModuleManager {
         addModule(new ReverseStep());
 
         //MISC
+        addModule(Annoucer.INSTANCE);
         addModule(TotemPopCounterModule.INSTANCE);
         addModule(new EgapFinder());
         addModule(BetterTabModule.INSTANCE);

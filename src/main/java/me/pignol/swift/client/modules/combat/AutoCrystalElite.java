@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
+
 import me.pignol.swift.api.util.*;
 import me.pignol.swift.api.util.objects.StopWatch;
 import me.pignol.swift.api.util.render.RenderUtil;
@@ -17,6 +18,7 @@ import me.pignol.swift.client.managers.SwitchManager;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
 import me.pignol.swift.client.modules.other.ColorsModule;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityEnderCrystal;
 import net.minecraft.entity.player.EntityPlayer;
@@ -40,7 +42,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
-public class AutoCrystal extends Module {
+public class AutoCrystalElite extends Module {
 
     private final Value<Values> setting = (new Value<>("Settings", Values.PLACE));
 
@@ -84,6 +86,7 @@ public class AutoCrystal extends Module {
     public Value<Float> range = (new Value<>("Range", 12.0f, 0.1f, 20.0f, 0.1F, v -> setting.getValue() == Values.MISC));
     private final Value<Integer> switchCooldown = (new Value<>("Cooldown", 500, 0, 1000, 25, v -> setting.getValue() == Values.MISC));
     public Value<Switch> switchValue = new Value<>("Switch", Switch.NONE, v -> setting.getValue() == Values.MISC);
+    public Value<Swing> swingValue = new Value<>("Swing", Swing.OFFHAND, v -> setting.getValue() == Values.MISC);
     public Value<Boolean> second = (new Value<>("Second", false, v -> setting.getValue() == Values.MISC));
     public Value<Boolean> soundRemove = (new Value<>("SoundRemove", false, v -> setting.getValue() == Values.MISC));
     public Value<Boolean> multiTask = new Value<>("MultiTask", true, v -> setting.getValue() == Values.MISC);
@@ -112,8 +115,8 @@ public class AutoCrystal extends Module {
     private boolean offHand;
     private boolean didOffset;
 
-    public AutoCrystal() {
-        super("AutoCrystal", Category.COMBAT);
+    public AutoCrystalElite() {
+        super("AutoCrystalElite", Category.COMBAT);
     }
 
     @SubscribeEvent
@@ -246,7 +249,7 @@ public class AutoCrystal extends Module {
                     didOffset = !didOffset;
                 }
                 mc.playerController.attackEntity(mc.player, crystal);
-                mc.player.swingArm(EnumHand.MAIN_HAND);
+                swing();                                      // mc.player.swingArm(EnumHand.MAIN_HAND);
                 breakTimer.reset();
             }
         }
@@ -291,6 +294,7 @@ public class AutoCrystal extends Module {
                     renderMap.clear();
                 }
                 renderMap.put(pos, System.currentTimeMillis());
+                swing();
             }
         }
     }
@@ -335,6 +339,16 @@ public class AutoCrystal extends Module {
         currentTarget = target;
         return blockPos;
     }
+
+    public void swing() {
+        if (swingMode.getValue() == Swing.OFFHAND) {
+            Util.mc.player.swingArm(EnumHand.OFF_HAND);
+        }
+        if (this.swingMode.getValue() == Swing.MAINHAND) {
+            Util.mc.player.swingArm(EnumHand.MAIN_HAND);
+        }
+    }
+
 
     public Entity calculateBreak(EntityPlayer player) {
         Entity crystal = null;
@@ -386,6 +400,15 @@ public class AutoCrystal extends Module {
             }
         }
         return false;
+    }
+
+    public enum Swing {
+
+        OFFHAND,
+
+        MAINHAND,
+
+        NONE,
     }
 
     public enum Switch {

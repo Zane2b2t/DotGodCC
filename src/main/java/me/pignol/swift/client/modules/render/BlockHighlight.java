@@ -6,6 +6,7 @@ import me.pignol.swift.client.event.events.Render3DEvent;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
 import me.pignol.swift.client.modules.other.ColorsModule;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
