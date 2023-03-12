@@ -2,6 +2,8 @@ package me.pignol.swift.api.util;
 
 import me.pignol.swift.api.interfaces.Globals;
 import me.pignol.swift.client.managers.FriendManager;
+import me.pignol.swift.api.mixins.IEntityLivingBase;
+
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
