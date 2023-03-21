@@ -13,16 +13,16 @@ public class AntiVanish extends Module {
         super("AntiVanish", Category.MISC);
     }
 
-    @SubscribeEvent
-    public void onPacketRead(PacketEvent.Send event) {
-        if (event.getPacket() instanceof SPacketPlayerListItem) {
-            SPacketPlayerListItem tabList = (SPacketPlayerListItem) event.getPacket();
-            for (SPacketPlayerListItem.AddPlayerData playerData : tabList.getEntries()) {
-                if (mc.getConnection().getPlayerInfo(playerData.getProfile().getId()) == null && playerData.getProfile().getName() != null) {
-                    ChatUtil.sendMessage(playerData.getProfile().getName() + " has vanished.");
-                }
-            }
-        }
-    }
+  //  @SubscribeEvent
+   // public void onPacketRead(PacketEvent.Send event) {
+      //  if (event.getPacket() instanceof SPacketPlayerListItem) {
+      //      SPacketPlayerListItem tabList = (SPacketPlayerListItem) event.getPacket();
+     //       for (SPacketPlayerListItem.AddPlayerData playerData : tabList.getEntries()) {
+      //          if (mc.getConnection().getPlayerInfo(playerData.getProfile().getId()) == null && playerData.getProfile().getName() != null) {
+       //             ChatUtil.sendMessage(playerData.getProfile().getName() + " has vanished.");
+          //      }
+        //    }
+      //  }
+  //  }
 
 }
