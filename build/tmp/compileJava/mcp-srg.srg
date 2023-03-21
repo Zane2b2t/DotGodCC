@@ -1,0 +1,121 @@
+FD: me/pignol/swift/api/mixins/MixinEntity/posX me/pignol/swift/api/mixins/MixinEntity/field_70165_t
+FD: me/pignol/swift/api/mixins/MixinEntity/posY me/pignol/swift/api/mixins/MixinEntity/field_70163_u
+FD: me/pignol/swift/api/mixins/MixinEntity/posZ me/pignol/swift/api/mixins/MixinEntity/field_70161_v
+FD: me/pignol/swift/api/mixins/MixinEntity/motionX me/pignol/swift/api/mixins/MixinEntity/field_70159_w
+FD: me/pignol/swift/api/mixins/MixinEntity/motionY me/pignol/swift/api/mixins/MixinEntity/field_70181_x
+FD: me/pignol/swift/api/mixins/MixinEntity/motionZ me/pignol/swift/api/mixins/MixinEntity/field_70179_y
+FD: me/pignol/swift/api/mixins/MixinEntity/rotationYaw me/pignol/swift/api/mixins/MixinEntity/field_70177_z
+FD: me/pignol/swift/api/mixins/MixinEntity/onGround me/pignol/swift/api/mixins/MixinEntity/field_70122_E
+FD: me/pignol/swift/api/mixins/MixinEntity/noClip me/pignol/swift/api/mixins/MixinEntity/field_70145_X
+FD: me/pignol/swift/api/mixins/MixinEntity/world me/pignol/swift/api/mixins/MixinEntity/field_70170_p
+FD: me/pignol/swift/api/mixins/MixinEntity/pistonDeltas me/pignol/swift/api/mixins/MixinEntity/field_191505_aI
+FD: me/pignol/swift/api/mixins/MixinEntity/pistonDeltasGameTime me/pignol/swift/api/mixins/MixinEntity/field_191506_aJ
+FD: me/pignol/swift/api/mixins/MixinEntity/isInWeb me/pignol/swift/api/mixins/MixinEntity/field_70134_J
+FD: me/pignol/swift/api/mixins/MixinEntity/stepHeight me/pignol/swift/api/mixins/MixinEntity/field_70138_W
+FD: me/pignol/swift/api/mixins/MixinEntity/collidedHorizontally me/pignol/swift/api/mixins/MixinEntity/field_70123_F
+FD: me/pignol/swift/api/mixins/MixinEntity/collidedVertically me/pignol/swift/api/mixins/MixinEntity/field_70124_G
+FD: me/pignol/swift/api/mixins/MixinEntity/collided me/pignol/swift/api/mixins/MixinEntity/field_70132_H
+FD: me/pignol/swift/api/mixins/MixinEntity/distanceWalkedModified me/pignol/swift/api/mixins/MixinEntity/field_70140_Q
+FD: me/pignol/swift/api/mixins/MixinEntity/distanceWalkedOnStepModified me/pignol/swift/api/mixins/MixinEntity/field_82151_R
+FD: me/pignol/swift/api/mixins/MixinEntity/fire me/pignol/swift/api/mixins/MixinEntity/field_190534_ay
+FD: me/pignol/swift/api/mixins/MixinEntity/nextStepDistance me/pignol/swift/api/mixins/MixinEntity/field_70150_b
+FD: me/pignol/swift/api/mixins/MixinEntity/nextFlap me/pignol/swift/api/mixins/MixinEntity/field_191959_ay
+FD: me/pignol/swift/api/mixins/MixinEntity/rand me/pignol/swift/api/mixins/MixinEntity/field_70146_Z
+FD: me/pignol/swift/api/mixins/MixinEntity/dataManager me/pignol/swift/api/mixins/MixinEntity/field_70180_af
+FD: me/pignol/swift/api/mixins/MixinEntityLivingBase/HEALTH me/pignol/swift/api/mixins/MixinEntityLivingBase/field_184632_c
+FD: me/pignol/swift/api/mixins/MixinEntityPlayerSP/mc me/pignol/swift/api/mixins/MixinEntityPlayerSP/field_71159_c
+FD: me/pignol/swift/api/mixins/MixinEntityRenderer/lightmapUpdateNeeded me/pignol/swift/api/mixins/MixinEntityRenderer/field_78536_aa
+FD: me/pignol/swift/api/mixins/MixinEntityRenderer/mc me/pignol/swift/api/mixins/MixinEntityRenderer/field_78531_r
+FD: me/pignol/swift/api/mixins/MixinEntityRenderer/lightmapColors me/pignol/swift/api/mixins/MixinEntityRenderer/field_78504_Q
+FD: me/pignol/swift/api/mixins/MixinEntityRenderer/lightmapTexture me/pignol/swift/api/mixins/MixinEntityRenderer/field_78513_d
+FD: me/pignol/swift/api/mixins/MixinGuiNewChat/mc me/pignol/swift/api/mixins/MixinGuiNewChat/field_146247_f
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/ENTRY_ORDERING me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175252_a
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/mc me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175250_f
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/guiIngame me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175251_g
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/footer me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175255_h
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/header me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175256_i
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/lastTimeOpened me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175253_j
+FD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/isBeingRendered me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/field_175254_k
+FD: me/pignol/swift/api/mixins/MixinItemRenderer/mc me/pignol/swift/api/mixins/MixinItemRenderer/field_78455_a
+FD: me/pignol/swift/api/mixins/MixinItemStack/itemDamage me/pignol/swift/api/mixins/MixinItemStack/field_77991_e
+FD: me/pignol/swift/api/mixins/MixinKeyBinding/pressed me/pignol/swift/api/mixins/MixinKeyBinding/field_74513_e
+FD: me/pignol/swift/api/mixins/MixinLayerCape/playerRenderer me/pignol/swift/api/mixins/MixinLayerCape/field_177167_a
+FD: me/pignol/swift/api/mixins/MixinMinecraft/world me/pignol/swift/api/mixins/MixinMinecraft/field_71441_e
+FD: me/pignol/swift/api/mixins/MixinRenderItem/RES_ITEM_GLINT me/pignol/swift/api/mixins/MixinRenderItem/field_110798_h
+FD: me/pignol/swift/api/mixins/MixinRenderLivingBase/mainModel me/pignol/swift/api/mixins/MixinRenderLivingBase/field_77045_g
+FD: me/pignol/swift/api/mixins/MixinRenderManager/renderPosX me/pignol/swift/api/mixins/MixinRenderManager/field_78725_b
+FD: me/pignol/swift/api/mixins/MixinRenderManager/renderPosY me/pignol/swift/api/mixins/MixinRenderManager/field_78726_c
+FD: me/pignol/swift/api/mixins/MixinRenderManager/renderPosZ me/pignol/swift/api/mixins/MixinRenderManager/field_78723_d
+FD: me/pignol/swift/api/mixins/MixinRenderPlayer/smallArms me/pignol/swift/api/mixins/MixinRenderPlayer/field_177140_a
+FD: me/pignol/swift/api/mixins/optimization/MixinBakedQuad/tintIndex me/pignol/swift/api/mixins/optimization/MixinBakedQuad/field_178213_b
+FD: me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/vertexFormatElement me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/field_181677_f
+FD: me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/vertexFormatIndex me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/field_181678_g
+FD: me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/vertexFormat me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/field_179011_q
+FD: me/pignol/swift/api/mixins/optimization/MixinChunk/storageArrays me/pignol/swift/api/mixins/optimization/MixinChunk/field_76652_q
+FD: me/pignol/swift/api/mixins/optimization/MixinTileEntityRendererDispatcher/renderEngine me/pignol/swift/api/mixins/optimization/MixinTileEntityRendererDispatcher/field_147553_e
+FD: me/pignol/swift/api/mixins/optimization/MixinVertexFormat/offsets me/pignol/swift/api/mixins/optimization/MixinVertexFormat/field_177356_c
+MD: me/pignol/swift/api/mixins/MixinEntity/isRiding ()Z me/pignol/swift/api/mixins/MixinEntity/func_184218_aH ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/isSneaking ()Z me/pignol/swift/api/mixins/MixinEntity/func_70093_af ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/setEntityBoundingBox (Lnet/minecraft/util/math/AxisAlignedBB;)V me/pignol/swift/api/mixins/MixinEntity/func_174826_a (Lnet/minecraft/util/math/AxisAlignedBB;)V
+MD: me/pignol/swift/api/mixins/MixinEntity/getEntityBoundingBox ()Lnet/minecraft/util/math/AxisAlignedBB; me/pignol/swift/api/mixins/MixinEntity/func_174813_aQ ()Lnet/minecraft/util/math/AxisAlignedBB;
+MD: me/pignol/swift/api/mixins/MixinEntity/resetPositionToBB ()V me/pignol/swift/api/mixins/MixinEntity/func_174829_m ()V
+MD: me/pignol/swift/api/mixins/MixinEntity/updateFallState (DZLnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;)V me/pignol/swift/api/mixins/MixinEntity/func_184231_a (DZLnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;)V
+MD: me/pignol/swift/api/mixins/MixinEntity/canTriggerWalking ()Z me/pignol/swift/api/mixins/MixinEntity/func_70041_e_ ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/isInWater ()Z me/pignol/swift/api/mixins/MixinEntity/func_70090_H ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/isBeingRidden ()Z me/pignol/swift/api/mixins/MixinEntity/func_184207_aI ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/getControllingPassenger ()Lnet/minecraft/entity/Entity; me/pignol/swift/api/mixins/MixinEntity/func_184179_bs ()Lnet/minecraft/entity/Entity;
+MD: me/pignol/swift/api/mixins/MixinEntity/playSound (Lnet/minecraft/util/SoundEvent;FF)V me/pignol/swift/api/mixins/MixinEntity/func_184185_a (Lnet/minecraft/util/SoundEvent;FF)V
+MD: me/pignol/swift/api/mixins/MixinEntity/doBlockCollisions ()V me/pignol/swift/api/mixins/MixinEntity/func_145775_I ()V
+MD: me/pignol/swift/api/mixins/MixinEntity/isWet ()Z me/pignol/swift/api/mixins/MixinEntity/func_70026_G ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/playStepSound (Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;)V me/pignol/swift/api/mixins/MixinEntity/func_180429_a (Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;)V
+MD: me/pignol/swift/api/mixins/MixinEntity/getSwimSound ()Lnet/minecraft/util/SoundEvent; me/pignol/swift/api/mixins/MixinEntity/func_184184_Z ()Lnet/minecraft/util/SoundEvent;
+MD: me/pignol/swift/api/mixins/MixinEntity/playFlySound (F)F me/pignol/swift/api/mixins/MixinEntity/func_191954_d (F)F
+MD: me/pignol/swift/api/mixins/MixinEntity/makeFlySound ()Z me/pignol/swift/api/mixins/MixinEntity/func_191957_ae ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/addEntityCrashInfo (Lnet/minecraft/crash/CrashReportCategory;)V me/pignol/swift/api/mixins/MixinEntity/func_85029_a (Lnet/minecraft/crash/CrashReportCategory;)V
+MD: me/pignol/swift/api/mixins/MixinEntity/dealFireDamage (I)V me/pignol/swift/api/mixins/MixinEntity/func_70081_e (I)V
+MD: me/pignol/swift/api/mixins/MixinEntity/setFire (I)V me/pignol/swift/api/mixins/MixinEntity/func_70015_d (I)V
+MD: me/pignol/swift/api/mixins/MixinEntity/getFireImmuneTicks ()I me/pignol/swift/api/mixins/MixinEntity/func_190531_bD ()I
+MD: me/pignol/swift/api/mixins/MixinEntity/isBurning ()Z me/pignol/swift/api/mixins/MixinEntity/func_70027_ad ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/fall (FF)V me/pignol/swift/api/mixins/MixinEntity/func_180430_e (FF)V
+MD: me/pignol/swift/api/mixins/MixinEntity/isNonBoss ()Z me/pignol/swift/api/mixins/MixinEntity/func_184222_aU ()Z
+MD: me/pignol/swift/api/mixins/MixinEntity/move (Lnet/minecraft/entity/MoverType;DDD)V me/pignol/swift/api/mixins/MixinEntity/func_70091_d (Lnet/minecraft/entity/MoverType;DDD)V
+MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/getPlayerName (Lnet/minecraft/client/network/NetworkPlayerInfo;)Ljava/lang/String; me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/func_175243_a (Lnet/minecraft/client/network/NetworkPlayerInfo;)Ljava/lang/String;
+MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/drawPing (IIILnet/minecraft/client/network/NetworkPlayerInfo;)V me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/func_175245_a (IIILnet/minecraft/client/network/NetworkPlayerInfo;)V
+MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/drawScoreboardValues (Lnet/minecraft/scoreboard/ScoreObjective;ILjava/lang/String;IILnet/minecraft/client/network/NetworkPlayerInfo;)V me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/func_175247_a (Lnet/minecraft/scoreboard/ScoreObjective;ILjava/lang/String;IILnet/minecraft/client/network/NetworkPlayerInfo;)V
+MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/renderPlayerlist (ILnet/minecraft/scoreboard/Scoreboard;Lnet/minecraft/scoreboard/ScoreObjective;)V me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/func_175249_a (ILnet/minecraft/scoreboard/Scoreboard;Lnet/minecraft/scoreboard/ScoreObjective;)V
+MD: me/pignol/swift/api/mixins/MixinItemRenderer/renderItemInFirstPerson (Lnet/minecraft/client/entity/AbstractClientPlayer;FFLnet/minecraft/util/EnumHand;FLnet/minecraft/item/ItemStack;F)V me/pignol/swift/api/mixins/MixinItemRenderer/func_187457_a (Lnet/minecraft/client/entity/AbstractClientPlayer;FFLnet/minecraft/util/EnumHand;FLnet/minecraft/item/ItemStack;F)V
+MD: me/pignol/swift/api/mixins/MixinItemRenderer/renderItemSide (Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/renderer/block/model/ItemCameraTransforms$TransformType;Z)V me/pignol/swift/api/mixins/MixinItemRenderer/func_187462_a (Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/renderer/block/model/ItemCameraTransforms$TransformType;Z)V
+MD: me/pignol/swift/api/mixins/MixinLayerCape/doRenderLayer (Lnet/minecraft/client/entity/AbstractClientPlayer;FFFFFFF)V me/pignol/swift/api/mixins/MixinLayerCape/func_177141_a (Lnet/minecraft/client/entity/AbstractClientPlayer;FFFFFFF)V
+MD: me/pignol/swift/api/mixins/MixinMinecraft/getMinecraft ()Lnet/minecraft/client/Minecraft; me/pignol/swift/api/mixins/MixinMinecraft/func_71410_x ()Lnet/minecraft/client/Minecraft;
+MD: me/pignol/swift/api/mixins/MixinMinecraft/startTimerHackThread ()V me/pignol/swift/api/mixins/MixinMinecraft/func_71389_H ()V
+MD: me/pignol/swift/api/mixins/MixinNetworkManager/isChannelOpen ()Z me/pignol/swift/api/mixins/MixinNetworkManager/func_150724_d ()Z
+MD: me/pignol/swift/api/mixins/MixinNetworkManager/flushOutboundQueue ()V me/pignol/swift/api/mixins/MixinNetworkManager/func_150733_h ()V
+MD: me/pignol/swift/api/mixins/MixinNetworkManager/dispatchPacket (Lnet/minecraft/network/Packet;[Lio/netty/util/concurrent/GenericFutureListener;)V me/pignol/swift/api/mixins/MixinNetworkManager/func_150732_b (Lnet/minecraft/network/Packet;[Lio/netty/util/concurrent/GenericFutureListener;)V
+MD: me/pignol/swift/api/mixins/MixinRenderItem/renderQuads (Lnet/minecraft/client/renderer/BufferBuilder;Ljava/util/List;ILnet/minecraft/item/ItemStack;)V me/pignol/swift/api/mixins/MixinRenderItem/func_191970_a (Lnet/minecraft/client/renderer/BufferBuilder;Ljava/util/List;ILnet/minecraft/item/ItemStack;)V
+MD: me/pignol/swift/api/mixins/MixinRenderItem/renderModel (Lnet/minecraft/client/renderer/block/model/IBakedModel;Lnet/minecraft/item/ItemStack;)V me/pignol/swift/api/mixins/MixinRenderItem/func_191961_a (Lnet/minecraft/client/renderer/block/model/IBakedModel;Lnet/minecraft/item/ItemStack;)V
+MD: me/pignol/swift/api/mixins/MixinRenderItem/renderModel (Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V me/pignol/swift/api/mixins/MixinRenderItem/func_191965_a (Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V
+MD: me/pignol/swift/api/mixins/MixinRenderItem/renderModel (Lnet/minecraft/client/renderer/block/model/IBakedModel;ILnet/minecraft/item/ItemStack;)V me/pignol/swift/api/mixins/MixinRenderItem/func_191967_a (Lnet/minecraft/client/renderer/block/model/IBakedModel;ILnet/minecraft/item/ItemStack;)V
+MD: me/pignol/swift/api/mixins/MixinRenderItem/renderItem (Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/renderer/block/model/IBakedModel;)V me/pignol/swift/api/mixins/MixinRenderItem/func_180454_a (Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/renderer/block/model/IBakedModel;)V
+MD: me/pignol/swift/api/mixins/MixinRenderItem/renderEffect (Lnet/minecraft/client/renderer/block/model/IBakedModel;)V me/pignol/swift/api/mixins/MixinRenderItem/func_191966_a (Lnet/minecraft/client/renderer/block/model/IBakedModel;)V
+MD: me/pignol/swift/api/mixins/MixinRenderManager/renderEntity (Lnet/minecraft/entity/Entity;DDDFFZ)V me/pignol/swift/api/mixins/MixinRenderManager/func_188391_a (Lnet/minecraft/entity/Entity;DDDFFZ)V
+MD: me/pignol/swift/api/mixins/MixinRenderManager/renderEntityStatic (Lnet/minecraft/entity/Entity;FZ)V me/pignol/swift/api/mixins/MixinRenderManager/func_188388_a (Lnet/minecraft/entity/Entity;FZ)V
+MD: me/pignol/swift/api/mixins/MixinRenderPlayer/getEntityTexture (Lnet/minecraft/client/entity/AbstractClientPlayer;)Lnet/minecraft/util/ResourceLocation; me/pignol/swift/api/mixins/MixinRenderPlayer/func_110775_a (Lnet/minecraft/client/entity/AbstractClientPlayer;)Lnet/minecraft/util/ResourceLocation;
+MD: me/pignol/swift/api/mixins/optimization/MixinBakedQuad/hasTintIndex ()Z me/pignol/swift/api/mixins/optimization/MixinBakedQuad/func_178212_b ()Z
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/up ()Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177984_a ()Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/up (I)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177981_b (I)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/down ()Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177977_b ()Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/down (I)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177979_c (I)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/north ()Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177978_c ()Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/north (I)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177964_d (I)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/south ()Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177968_d ()Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/south (I)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177970_e (I)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/west ()Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177976_e ()Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/west (I)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177985_f (I)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/east ()Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177974_f ()Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/east (I)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177965_g (I)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBlockPos/offset (Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/math/BlockPos; me/pignol/swift/api/mixins/optimization/MixinBlockPos/func_177972_a (Lnet/minecraft/util/EnumFacing;)Lnet/minecraft/util/math/BlockPos;
+MD: me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/nextVertexFormatIndex ()V me/pignol/swift/api/mixins/optimization/MixinBufferBuilder/func_181667_k ()V
+MD: me/pignol/swift/api/mixins/optimization/MixinChunk/getBlockState (III)Lnet/minecraft/block/state/IBlockState; me/pignol/swift/api/mixins/optimization/MixinChunk/func_186032_a (III)Lnet/minecraft/block/state/IBlockState;
+MD: me/pignol/swift/api/mixins/optimization/MixinVertexFormat/getOffset (I)I me/pignol/swift/api/mixins/optimization/MixinVertexFormat/func_181720_d (I)I
+MD: me/pignol/swift/api/mixins/optimization/MixinWorld/rayTraceBlocks (Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;ZZZ)Lnet/minecraft/util/math/RayTraceResult; me/pignol/swift/api/mixins/optimization/MixinWorld/func_147447_a (Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/math/Vec3d;ZZZ)Lnet/minecraft/util/math/RayTraceResult;
+MD: me/pignol/swift/api/mixins/optimization/MixinWorldVertexBufferUploader/draw (Lnet/minecraft/client/renderer/BufferBuilder;)V me/pignol/swift/api/mixins/optimization/MixinWorldVertexBufferUploader/func_181679_a (Lnet/minecraft/client/renderer/BufferBuilder;)V

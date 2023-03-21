@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+TweakOrder: 0
+MixinConfigs: mixins.swift.json
+FMLAT: swift_at.cfg
+TweakClass: org.spongepowered.asm.launch.MixinTweaker
+FMLCorePlugin: me.pignol.swift.api.Loader
+
