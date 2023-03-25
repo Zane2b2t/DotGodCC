@@ -41,6 +41,9 @@ public class HudModule extends Module {
     private final Value<Boolean> watermarkOffset = new Value<>("WatermarkOffset", false, v -> watermark.getValue());
     private final Value<Boolean> watermark2 = new Value<>("Watermark2", true);
     private final Value<Integer> watermark2y = new Value<>("Watermark2Y", 100, 0, 600, v -> watermark2.getValue());
+    public final Value<Boolean> watermark3 = new Value<>("Watermark3", false);
+    public final Value<String> watermark3Text = new Value<>("Watermark3Text", "Future v2.13.5-extern+234.da4c98c198");
+    public final Value<Integer> watermark3y = new Value<>("Watermark3Y", 5, 0, 600, v -> watermark3.getValue());
     private final Value<Boolean> arraylist = new Value<>("Arraylist", true);
     private final Value<Boolean> retardMode = new Value<>("RetardMode", true, v -> arraylist.getValue());
     private final Value<Boolean> ping = new Value<>("Ping", true);
@@ -110,8 +113,13 @@ public class HudModule extends Module {
             FontManager.getInstance().drawStringWithShadow(watermarkText.getValue(), watermarkX.getValue(), 2 + (watermarkOffset.getValue() ? 10 : 0), color(index, count));
         }
 
+        if (watermark3.getValue()) {
+            index++;
+            FontManager.getInstance().drawStringWithShadow(watermark3Text.getValue(), watermark3y.getValue(), 2 + (watermarkOffset.getValue() ? 10 : 0), color(index, count));
+        }
+
         if (watermark2.getValue()) {
-            FontManager.getInstance().drawStringWithShadow("trollgod.cc", 2, watermark2y.getValue(), color);
+            FontManager.getInstance().drawStringWithShadow("DotGod.CC", 2, watermark2y.getValue(), color);
         }
 
         if (welcomer.getValue()) {

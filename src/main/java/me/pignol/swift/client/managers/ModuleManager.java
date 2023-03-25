@@ -123,7 +123,7 @@ public class ModuleManager {
         addModule(new ReverseStep());
 
         //MISC
-        addModule(Annoucer.INSTANCE);
+        addModule(new Annoucer());
         addModule(TotemPopCounterModule.INSTANCE);
         addModule(new EgapFinder());
         addModule(BetterTabModule.INSTANCE);
