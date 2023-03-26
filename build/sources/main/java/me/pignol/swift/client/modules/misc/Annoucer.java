@@ -1,6 +1,5 @@
 package me.pignol.swift.client.modules.misc;
 
-import me.pignol.swift.Swift;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
 import me.pignol.swift.api.value.Value;
@@ -18,12 +17,10 @@ public class Annoucer extends Module {
 
    private final Value<Float> delay = new Value<>("Delay", 1F, 0.1F, 15.0F, 0.1F);
 
-
-    public Annoucer()
-    {
+    public Annoucer() {
         super("Annoucer", Category.MISC);
-        INSTANCE = this;
     }
+
 
     @SubscribeEvent
     public void onUpdate(UpdateEvent event){

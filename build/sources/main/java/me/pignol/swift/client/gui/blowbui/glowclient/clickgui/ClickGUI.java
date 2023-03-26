@@ -36,6 +36,8 @@ public class ClickGUI extends GuiScreen {
 
    public void drawScreen(int x, int y, float ticks) {
       windows.forEach(window -> window.draw(x, y));
+   } {
+     // this.drawDefaultBackground();
    }
 
    public void mouseClicked(int x, int y, int b) throws IOException {

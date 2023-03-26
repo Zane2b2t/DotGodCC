@@ -115,7 +115,7 @@ public class HudModule extends Module {
 
         if (watermark3.getValue()) {
             index++;
-            FontManager.getInstance().drawStringWithShadow(watermark3Text.getValue(), watermark3y.getValue(), 2 + (watermarkOffset.getValue() ? 10 : 0), color(index, count));
+            FontManager.getInstance().drawStringWithShadow(watermark3Text.getValue(), 2, watermark3y.getValue(), color(index, count));
         }
 
         if (watermark2.getValue()) {

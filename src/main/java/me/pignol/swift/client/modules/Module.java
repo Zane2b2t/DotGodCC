@@ -75,7 +75,7 @@ public class Module {
                 if (ManageModule.INSTANCE.forgeHax.getValue()) {
                     sendMessage("> " + getName() + ".enabled = true", -hashCode());
                 } else {
-                    ChatUtil.sendMessage(ChatFormatting.DARK_AQUA + getName() + ChatFormatting.LIGHT_PURPLE + "was" + (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"));
+                    sendMessage(ChatFormatting.DARK_AQUA  + getName()  +  ChatFormatting.LIGHT_PURPLE  +  "was"  +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
                 }
             }
             if (needsListener)
@@ -86,13 +86,15 @@ public class Module {
                 if (ManageModule.INSTANCE.forgeHax.getValue()) {
                     sendMessage("> " + getName() + ".enabled = false", -hashCode());
                 } else {
-                    sendMessage(ChatFormatting.DARK_AQUA + getName() + ChatFormatting.LIGHT_PURPLE + "was" + (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"));
+                    sendMessage(ChatFormatting.DARK_AQUA  + getName() + ChatFormatting.LIGHT_PURPLE  + "was" +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
                 }
             }
             if (needsListener)
                 MinecraftForge.EVENT_BUS.unregister(this);
         }
     }
+
+
 
     public boolean isNull() {
         return mc.world == null || mc.player == null;

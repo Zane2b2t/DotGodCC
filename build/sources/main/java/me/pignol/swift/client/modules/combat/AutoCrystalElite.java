@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
 
+import me.pignol.swift.api.interfaces.Globals;
 import me.pignol.swift.api.util.*;
 import me.pignol.swift.api.util.objects.StopWatch;
 import me.pignol.swift.api.util.render.RenderUtil;
@@ -43,12 +44,15 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraft.client.renderer.GlStateManager;
 
+import static net.minecraft.network.play.client.CPacketUseEntity.Action.ATTACK;
+
 public class AutoCrystalElite extends Module {
 
     private final Value<Values> setting = (new Value<>("Settings", Values.PLACE));
 
     //PLACE
     public Value<Boolean> place = (new Value<>("Place", true, v -> setting.getValue() == Values.PLACE));
+    public Value<Boolean> instantPlace = (new Value<>("InstantPlace", false, v -> setting.getValue() == Values.PLACE && place.getValue()));
     public Value<Integer> placeDelay = (new Value<>("PlaceDelay", 0, 0, 1000, v -> setting.getValue() == Values.PLACE && place.getValue()));
     public Value<Float> placeRange = (new Value<>("PlaceRange", 6.0f, 0.0f, 6.0f, v -> setting.getValue() == Values.PLACE && place.getValue()));
     public Value<Float> placeTrace = (new Value<>("PlaceTrace", 6.0f, 0.0f, 6.0f, v -> setting.getValue() == Values.PLACE && place.getValue()));
@@ -56,6 +60,7 @@ public class AutoCrystalElite extends Module {
     //BREAK
     public Value<Boolean> explode = (new Value<>("Break", true, v -> setting.getValue() == Values.BREAK));
     public Value<Boolean> predict = (new Value<>("Predict", true, v -> setting.getValue() == Values.BREAK));
+    public Value<Boolean> setDead = (new Value<>("SetDead", true, v -> setting.getValue() == Values.BREAK && explode.getValue()));
     public Value<Integer> breakDelay = (new Value<>("BreakDelay", 0, 0, 1000, v -> setting.getValue() == Values.BREAK && explode.getValue()));
     public Value<Float> breakRange = (new Value<>("BreakRange", 6.0f, 0.0f, 6.0f, v -> setting.getValue() == Values.BREAK && explode.getValue()));
     public Value<Float> breakTrace = (new Value<>("BreakTrace", 6.0f, 0.0f, 6.0f, v -> setting.getValue() == Values.BREAK && explode.getValue()));
@@ -170,6 +175,22 @@ public class AutoCrystalElite extends Module {
                 if (entity instanceof EntityEnderCrystal) {
                     placedPos.remove(new BlockPos(entity.posX, entity.posY - 1, entity.posZ));
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onPacketSend(PacketEvent.Send event) {
+        CPacketUseEntity packet = new CPacketUseEntity();
+        Globals Util = null;
+        if (instantPlace.getValue() && event.getStage() == 0 && event.getPacket() instanceof CPacketUseEntity && (packet = (CPacketUseEntity) event.getPacket()).getAction() == ATTACK && packet.getEntityFromWorld(Util.mc.world) instanceof EntityEnderCrystal) {
+            doPlace();
+        }
+        if (setDead.getValue() && event.getStage() == 0 && event.getPacket() instanceof CPacketUseEntity && (packet = (CPacketUseEntity) event.getPacket()).getAction() == ATTACK && packet.getEntityFromWorld(AutoCrystalElite.mc.world) instanceof EntityEnderCrystal) {
+            Entity entity = packet.getEntityFromWorld(Util.mc.world);
+            if (entity.isAddedToWorld()) {
+                entity.setDead();
+                Util.mc.world.removeEntityFromWorld(entity.entityId);
             }
         }
     }

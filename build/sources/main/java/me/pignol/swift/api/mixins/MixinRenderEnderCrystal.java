@@ -4,10 +4,13 @@ import me.pignol.swift.client.modules.render.Chams;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderEnderCrystal;
 import net.minecraft.entity.Entity;
+import net.minecraft.client.renderer.GlStateManager;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+
+import static org.lwjgl.opengl.GL11.*;
 
 @Mixin(RenderEnderCrystal.class)
 public class MixinRenderEnderCrystal {
@@ -34,6 +37,18 @@ public class MixinRenderEnderCrystal {
                 GL11.glPopAttrib();
                 GL11.glPopMatrix();
             }
+          //  if (Chams.glint.getValue()) {
+            //    glPushMatrix();
+          //      glPushAttrib(GL_ALL_ATTRIB_BITS);
+          //      glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+          //      glDisable(GL_LIGHTING);
+          //
+          //      glDepthRange(0, 0.1);
+          //
+           //     glEnable(GL_BLEND);
+
+
+          //  }
             GL11.glScalef(1.0F, 1.0F, 1.0F);
         } else {
             instance.render(entityIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);

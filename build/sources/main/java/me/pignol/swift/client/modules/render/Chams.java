@@ -10,6 +10,7 @@ public class Chams extends Module {
 
     public final Value<Boolean> players = new Value<>("Players", true);
     public final Value<Boolean> crystals = new Value<>("Crystals", true);
+    public static final Value<Boolean> glint = new Value<>("Glint", true);
 
     public final Value<Integer> red = new Value<>("Red", 255, 0, 255);
     public final Value<Integer> green = new Value<>("Green", 255, 0, 255);

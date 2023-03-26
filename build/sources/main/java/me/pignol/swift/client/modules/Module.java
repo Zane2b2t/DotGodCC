@@ -7,9 +7,13 @@ import me.pignol.swift.client.modules.other.HudModule;
 import me.pignol.swift.client.modules.other.ManageModule;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraft.util.text.TextComponentString;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import static me.pignol.swift.api.util.text.ChatUtil.sendMessage;
 
 public class Module {
 
@@ -69,9 +73,9 @@ public class Module {
             onEnable();
             if (mc.player != null) {
                 if (ManageModule.INSTANCE.forgeHax.getValue()) {
-                    ChatUtil.sendMessage("> " + getName() + ".enabled = true", -hashCode());
+                    sendMessage("> " + getName() + ".enabled = true", -hashCode());
                 } else {
-                    ChatUtil.sendMessage(getName() + " was " + (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
+                    sendMessage(ChatFormatting.DARK_AQUA  + getName()  +  ChatFormatting.LIGHT_PURPLE  +  "was"  +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
                 }
             }
             if (needsListener)
@@ -80,15 +84,17 @@ public class Module {
             onDisable();
             if (mc.player != null) {
                 if (ManageModule.INSTANCE.forgeHax.getValue()) {
-                    ChatUtil.sendMessage("> " + getName() + ".enabled = false", -hashCode());
+                    sendMessage("> " + getName() + ".enabled = false", -hashCode());
                 } else {
-                    ChatUtil.sendMessage(getName() + " was " + (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
+                    sendMessage(ChatFormatting.DARK_AQUA  + getName() + ChatFormatting.LIGHT_PURPLE  + "was" +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
                 }
             }
             if (needsListener)
                 MinecraftForge.EVENT_BUS.unregister(this);
         }
     }
+
+
 
     public boolean isNull() {
         return mc.world == null || mc.player == null;

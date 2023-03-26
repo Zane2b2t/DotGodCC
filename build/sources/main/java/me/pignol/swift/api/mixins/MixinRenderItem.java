@@ -23,6 +23,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.ModifyArgs;
+import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 import java.awt.*;
 import java.util.List;
@@ -40,9 +42,9 @@ public abstract class MixinRenderItem {
     @ModifyArg(method = "renderEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/RenderItem;renderModel(Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V"), index = 1)
     public int renderEffect(int color) {
         EnchantGlintModule instance = EnchantGlintModule.INSTANCE;
-        if (instance.isEnabled()) {
+        if (instance.isEnabled())
             return instance.rainbow.getValue() ? Color.HSBtoRGB(ColorsModule.INSTANCE.hue, ColorsModule.INSTANCE.saturation.getValue() / 255.0F, ColorsModule.INSTANCE.brightness.getValue() / 255.0F) : ((0xFF) << 24) | ((instance.red.getValue() & 0xFF) << 16) | ((instance.green.getValue() & 0xFF) << 8) | ((instance.blue.getValue() & 0xFF));
-        }
+
         return color;
     }
 
@@ -141,7 +143,7 @@ public abstract class MixinRenderItem {
         Minecraft.getMinecraft().renderEngine.bindTexture(RES_ITEM_GLINT);
         GlStateManager.matrixMode(5890);
         GlStateManager.pushMatrix();
-        GlStateManager.scale(8.0F, 8.0F, 8.0F);
+        GlStateManager.scale (8.0F, 8.0F, 8.0F);
         float f = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0F / 8.0F;
         GlStateManager.translate(f, 0.0F, 0.0F);
         GlStateManager.rotate(-50.0F, 0.0F, 0.0F, 1.0F);
@@ -162,6 +164,25 @@ public abstract class MixinRenderItem {
         GlStateManager.depthFunc(515);
         GlStateManager.depthMask(true);
         Minecraft.getMinecraft().renderEngine.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+    }
+
+    @ModifyArgs(method = "renderEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;scale(FFF)V"))
+    private void RenderEffectScale(Args args) {
+        if (EnchantGlintModule.INSTANCE.isEnabled()) {
+        float scale = EnchantGlintModule.glintScale.getValue();
+        args.set(0, scale);
+        args.set(1, scale);
+        args.set(2, scale);
+        }
+    }
+
+    @ModifyArgs(method = "renderEffect", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;translate(FFF)V"))
+    private void renderEffectTranslate(Args args) {
+        if (EnchantGlintModule.INSTANCE.isEnabled())
+            args.set(0, (float) args.get(0) * EnchantGlintModule.glintSpeed.getValue());
+
+
+
     }
 
 }

@@ -172,6 +172,8 @@
     },
     "me/pignol/swift/api/mixins/MixinRenderItem": {
       "Lnet/minecraft/client/renderer/RenderItem;renderModel(Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V": "Lnet/minecraft/client/renderer/RenderItem;func_191965_a(Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V",
+      "Lnet/minecraft/client/renderer/GlStateManager;translate(FFF)V": "Lnet/minecraft/client/renderer/GlStateManager;func_179109_b(FFF)V",
+      "Lnet/minecraft/client/renderer/GlStateManager;scale(FFF)V": "Lnet/minecraft/client/renderer/GlStateManager;func_179152_a(FFF)V",
       "renderEffect": "Lnet/minecraft/client/renderer/RenderItem;func_191966_a(Lnet/minecraft/client/renderer/block/model/IBakedModel;)V"
     },
     "me/pignol/swift/api/mixins/optimization/MixinBakedQuad": {
@@ -353,6 +355,8 @@
       },
       "me/pignol/swift/api/mixins/MixinRenderItem": {
         "Lnet/minecraft/client/renderer/RenderItem;renderModel(Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V": "Lbzw;a(Lcfy;I)V",
+        "Lnet/minecraft/client/renderer/GlStateManager;translate(FFF)V": "Lbus;c(FFF)V",
+        "Lnet/minecraft/client/renderer/GlStateManager;scale(FFF)V": "Lbus;b(FFF)V",
         "renderEffect": "Lbzw;a(Lcfy;)V"
       },
       "me/pignol/swift/api/mixins/optimization/MixinBakedQuad": {
@@ -532,6 +536,8 @@
       },
       "me/pignol/swift/api/mixins/MixinRenderItem": {
         "Lnet/minecraft/client/renderer/RenderItem;renderModel(Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V": "Lnet/minecraft/client/renderer/RenderItem;func_191965_a(Lnet/minecraft/client/renderer/block/model/IBakedModel;I)V",
+        "Lnet/minecraft/client/renderer/GlStateManager;translate(FFF)V": "Lnet/minecraft/client/renderer/GlStateManager;func_179109_b(FFF)V",
+        "Lnet/minecraft/client/renderer/GlStateManager;scale(FFF)V": "Lnet/minecraft/client/renderer/GlStateManager;func_179152_a(FFF)V",
         "renderEffect": "Lnet/minecraft/client/renderer/RenderItem;func_191966_a(Lnet/minecraft/client/renderer/block/model/IBakedModel;)V"
       },
       "me/pignol/swift/api/mixins/optimization/MixinBakedQuad": {
