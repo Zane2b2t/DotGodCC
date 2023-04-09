@@ -31,7 +31,7 @@ import java.util.*;
 
 import static me.pignol.swift.api.util.RotationUtil.RotationType;
 
-public class AutoTrapModule extends Module {
+public class InstantTrap extends Module {
 
     private final Value<RotationType> rotation = new Value<>("Rotation", RotationType.NONE);
     private final Value<Integer> delay = new Value<>("Delay/Place", 50, 0, 250);
@@ -65,8 +65,8 @@ public class AutoTrapModule extends Module {
     private final StopWatch attackTimer = new StopWatch();
     private final StopWatch timer = new StopWatch();
 
-    public AutoTrapModule() {
-        super("AutoTrap", Category.COMBAT);
+    public InstantTrap() {
+        super("InstantTrap", Category.COMBAT);
     }
 
     @Override

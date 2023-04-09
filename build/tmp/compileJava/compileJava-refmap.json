@@ -103,7 +103,9 @@
       "renderPotionEffects": "Lnet/minecraft/client/gui/GuiIngame;func_184048_a(Lnet/minecraft/client/gui/ScaledResolution;)V"
     },
     "me/pignol/swift/api/mixins/MixinFontRenderer": {
+      "Lnet/minecraft/client/gui/FontRenderer;renderStringAtPos(Ljava/lang/String;Z)V": "Lnet/minecraft/client/gui/FontRenderer;func_78255_a(Ljava/lang/String;Z)V",
       "renderString": "Lnet/minecraft/client/gui/FontRenderer;func_180455_b(Ljava/lang/String;FFIZ)I",
+      "renderString(Ljava/lang/String;FFIZ)I": "Lnet/minecraft/client/gui/FontRenderer;func_180455_b(Ljava/lang/String;FFIZ)I",
       "getStringWidth": "Lnet/minecraft/client/gui/FontRenderer;func_78256_a(Ljava/lang/String;)I"
     },
     "me/pignol/swift/api/mixins/MixinAbstractHorse": {
@@ -286,7 +288,9 @@
         "renderPotionEffects": "Lbiq;a(Lbit;)V"
       },
       "me/pignol/swift/api/mixins/MixinFontRenderer": {
+        "Lnet/minecraft/client/gui/FontRenderer;renderStringAtPos(Ljava/lang/String;Z)V": "Lbip;a(Ljava/lang/String;Z)V",
         "renderString": "Lbip;b(Ljava/lang/String;FFIZ)I",
+        "renderString(Ljava/lang/String;FFIZ)I": "Lbip;b(Ljava/lang/String;FFIZ)I",
         "getStringWidth": "Lbip;a(Ljava/lang/String;)I"
       },
       "me/pignol/swift/api/mixins/MixinAbstractHorse": {
@@ -467,7 +471,9 @@
         "renderPotionEffects": "Lnet/minecraft/client/gui/GuiIngame;func_184048_a(Lnet/minecraft/client/gui/ScaledResolution;)V"
       },
       "me/pignol/swift/api/mixins/MixinFontRenderer": {
+        "Lnet/minecraft/client/gui/FontRenderer;renderStringAtPos(Ljava/lang/String;Z)V": "Lnet/minecraft/client/gui/FontRenderer;func_78255_a(Ljava/lang/String;Z)V",
         "renderString": "Lnet/minecraft/client/gui/FontRenderer;func_180455_b(Ljava/lang/String;FFIZ)I",
+        "renderString(Ljava/lang/String;FFIZ)I": "Lnet/minecraft/client/gui/FontRenderer;func_180455_b(Ljava/lang/String;FFIZ)I",
         "getStringWidth": "Lnet/minecraft/client/gui/FontRenderer;func_78256_a(Ljava/lang/String;)I"
       },
       "me/pignol/swift/api/mixins/MixinAbstractHorse": {

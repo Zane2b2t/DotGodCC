@@ -9,6 +9,7 @@ import me.pignol.swift.client.managers.RotationManager;
 import me.pignol.swift.client.managers.ServerManager;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
+import me.pignol.swift.client.modules.player.AutoFeetPlace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
@@ -45,7 +46,7 @@ public class AuraModule extends Module {
         if (event.getStage() == Stage.POST)
             return;
 
-        if (Surround.isPlacing && pauseOnSurround.getValue())
+        if (AutoFeetPlace.isPlacing && pauseOnSurround.getValue())
         {
             return;
         }

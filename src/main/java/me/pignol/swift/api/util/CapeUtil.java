@@ -2,6 +2,7 @@ package me.pignol.swift.api.util;
 
 import com.google.common.collect.Maps;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.UsernameCache;
 
 import java.util.HashMap;
 import java.util.UUID;

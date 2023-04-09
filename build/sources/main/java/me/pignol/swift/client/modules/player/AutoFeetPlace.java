@@ -1,4 +1,4 @@
-package me.pignol.swift.client.modules.combat;
+package me.pignol.swift.client.modules.player;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
@@ -32,7 +32,7 @@ import java.util.Set;
 
 import static me.pignol.swift.api.util.RotationUtil.RotationType;
 
-public class Surround extends Module {
+public class AutoFeetPlace extends Module {
 
     private final Value<RotationType> rotation = new Value<>("Rotation", RotationType.NONE);
     private final Value<Integer> delay = new Value<>("Delay", 0, 0, 300);
@@ -60,8 +60,8 @@ public class Surround extends Module {
     private int placements, extenders, obbySlot;
     private double startPosY;
 
-    public Surround() {
-        super("Surround", Category.COMBAT);
+    public AutoFeetPlace() {
+        super("AutoFeetPlace", Category.PLAYER);
     }
 
     @Override

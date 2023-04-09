@@ -13,7 +13,10 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketEntityAction;
 import net.minecraft.network.play.client.CPacketUseEntity;
 import net.minecraft.util.EnumHand;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.Potion;
 
+import java.util.Objects;
 import java.util.List;
 
 public class EntityUtil implements Globals {
@@ -73,6 +76,23 @@ public class EntityUtil implements Globals {
         }
 
         return closest;
+    }
+    public static double getMaxSpeed() {
+        double maxModifier = 0.2873;
+        if (mc.player.isPotionActive(Objects.requireNonNull(Potion.getPotionById(1)))) {
+            maxModifier *= 1.0 + 0.2 * (Objects.requireNonNull(mc.player.getActivePotionEffect(Objects.requireNonNull(Potion.getPotionById(1)))).getAmplifier() + 1);
+        }
+        return maxModifier;
+    }
+
+
+    public static double getBaseMotionSpeed() {
+        double event = 0.272;
+        if (mc.player.isPotionActive(MobEffects.SPEED)) {
+            int var3 = Objects.requireNonNull(mc.player.getActivePotionEffect(MobEffects.SPEED)).getAmplifier();
+            event *= 1.0 + 0.2 * var3;
+        }
+        return event;
     }
 
     public static EntityPlayer getClosestPlayer(final List<EntityPlayer> players) {

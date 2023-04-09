@@ -79,6 +79,7 @@ MD: me/pignol/swift/api/mixins/MixinEntity/isBurning ()Z me/pignol/swift/api/mix
 MD: me/pignol/swift/api/mixins/MixinEntity/fall (FF)V me/pignol/swift/api/mixins/MixinEntity/e (FF)V
 MD: me/pignol/swift/api/mixins/MixinEntity/isNonBoss ()Z me/pignol/swift/api/mixins/MixinEntity/bf ()Z
 MD: me/pignol/swift/api/mixins/MixinEntity/move (Lnet/minecraft/entity/MoverType;DDD)V me/pignol/swift/api/mixins/MixinEntity/a (Lvv;DDD)V
+MD: me/pignol/swift/api/mixins/MixinFontRenderer/renderStringAtPos (Ljava/lang/String;Z)V me/pignol/swift/api/mixins/MixinFontRenderer/a (Ljava/lang/String;Z)V
 MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/getPlayerName (Lnet/minecraft/client/network/NetworkPlayerInfo;)Ljava/lang/String; me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/a (Lbsc;)Ljava/lang/String;
 MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/drawPing (IIILnet/minecraft/client/network/NetworkPlayerInfo;)V me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/a (IIILbsc;)V
 MD: me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/drawScoreboardValues (Lnet/minecraft/scoreboard/ScoreObjective;ILjava/lang/String;IILnet/minecraft/client/network/NetworkPlayerInfo;)V me/pignol/swift/api/mixins/MixinGuiPlayerTabOverlay/a (Lbhg;ILjava/lang/String;IILbsc;)V

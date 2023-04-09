@@ -4,10 +4,10 @@ import me.pignol.swift.api.util.text.ChatUtil;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
 
-public class Auto32k extends Module {
+public class Instant32k extends Module {
 
-    public Auto32k() {
-        super("Auto32k", Category.COMBAT);
+    public Instant32k() {
+        super("Instant32k", Category.COMBAT);
     }
 
     @Override

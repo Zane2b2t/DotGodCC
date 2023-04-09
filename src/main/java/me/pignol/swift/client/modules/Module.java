@@ -75,7 +75,7 @@ public class Module {
                 if (ManageModule.INSTANCE.forgeHax.getValue()) {
                     sendMessage("> " + getName() + ".enabled = true", -hashCode());
                 } else {
-                    sendMessage(ChatFormatting.DARK_AQUA  + getName()  +  ChatFormatting.LIGHT_PURPLE  +  "was"  +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
+                    sendMessage(ChatFormatting.DARK_AQUA  + getName()  +  ChatFormatting.LIGHT_PURPLE  +  " was "  +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
                 }
             }
             if (needsListener)
@@ -86,7 +86,7 @@ public class Module {
                 if (ManageModule.INSTANCE.forgeHax.getValue()) {
                     sendMessage("> " + getName() + ".enabled = false", -hashCode());
                 } else {
-                    sendMessage(ChatFormatting.DARK_AQUA  + getName() + ChatFormatting.LIGHT_PURPLE  + "was" +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
+                    sendMessage(ChatFormatting.DARK_AQUA  + getName() + ChatFormatting.LIGHT_PURPLE  + " was " +  (isEnabled() ? ChatFormatting.GREEN + "enabled" : ChatFormatting.RED + "disabled"), -hashCode());
                 }
             }
             if (needsListener)

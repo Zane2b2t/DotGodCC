@@ -42,16 +42,16 @@ public class ModuleManager {
 
         //COMBAT
         addModule(AuraModule.INSTANCE);
-        addModule(new Auto32k());
+        addModule(new Instant32k());
         addModule(new AutoNomadHut());
         addModule(new AutoCrystalElite());
         addModule(new FencerModule());
         addModule(new AntiRegear());
         addModule(new AutoArmor());
         addModule(new SelfFillModule());
-        addModule(new Surround());
+        addModule(new AutoFeetPlace());
         addModule(new OffhandModule());
-        addModule(new AutoTrapModule());
+        addModule(new InstantTrap());
         addModule(new BowSpoof());
         addModule(new HoleFillerModule());
         addModule(new CriticalsModule());
@@ -60,6 +60,8 @@ public class ModuleManager {
         //RENDER
         addModule(SkeletonModule.INSTANCE);
         addModule(NoRenderModule.INSTANCE);
+        addModule(Starlink.getInstance());
+        addModule(DickheadESP.INSTANCE);
         addModule(new Arrows());
         addModule(CustomSkyModule.INSTANCE);
         addModule(NametagsModule.INSTANCE);
@@ -104,7 +106,9 @@ public class ModuleManager {
         addModule(VelocityModule.INSTANCE);
         addModule(NoSlowModule.INSTANCE);
         addModule(PacketFly.INSTANCE);
+        addModule(new NoAccel());
         addModule(new TunnelSpeed());
+        addModule(new hhh());
         addModule(new FastStairs());
         addModule(new Flight());
         addModule(new Clip());

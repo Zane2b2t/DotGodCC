@@ -21,7 +21,7 @@ public class OffhandModule extends Module
 
     private final Value<Boolean> totem = new Value<>("Totem", true);
     private final Value<Boolean> swordGapple = new Value<>("SwordGapple", true);
-    private final Value<Float> enemyRange = new Value<>("EnemyRange", 18.0F, 0.0F, 36.0F);
+    private final Value<Float> enemyRange = new Value<>("EnemyRange", 25.0F, 0.0F, 50.0F);
     private final Value<Float> crystalHealth = new Value<>("C-Health", 16.0F, 0.0F, 36.0F, v -> !totem.getValue());
     private final Value<Float> crystalHoleHealth = new Value<>("C-H-Health", 16.0F, 0.0F, 36.0F, v -> !totem.getValue());
     private final Value<Float> gappleHealth = new Value<>("G-Health", 16.0F, 0.0F, 36.0F, v -> swordGapple.getValue());

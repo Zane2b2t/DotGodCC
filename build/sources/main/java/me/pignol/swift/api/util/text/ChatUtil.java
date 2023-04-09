@@ -12,7 +12,7 @@ public class ChatUtil implements Globals {
             if (ManageModule.INSTANCE.rainbowPrefix.getValue()) {
                 return "\u00a7+<" + ManageModule.INSTANCE.clientName.getValue() + ">\u00a7r ";
             }
-            return TextColor.coloredString("<", ManageModule.INSTANCE.bracketColor.getValue()) + TextColor.coloredString(ManageModule.INSTANCE.clientName.getValue(), ManageModule.INSTANCE.nameColor.getValue()) + TextColor.coloredString(">", ManageModule.INSTANCE.bracketColor.getValue()) + " ";
+            return TextColor.coloredString("[", ManageModule.INSTANCE.bracketColor.getValue()) + TextColor.coloredString(ManageModule.INSTANCE.clientName.getValue(), ManageModule.INSTANCE.nameColor.getValue()) + TextColor.coloredString("]", ManageModule.INSTANCE.bracketColor.getValue()) + " ";
         }
         return "";
     }
