@@ -29,7 +29,7 @@ public class Freecam extends Module {
     private float pitch = -1;
 
     public Freecam() {
-        super("Freecam", Category.RENDER);
+        super("Freecam", Category.MISC);
         INSTANCE = this;
     }
 

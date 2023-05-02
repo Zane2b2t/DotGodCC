@@ -23,7 +23,7 @@ public class SelfFillModule extends Module {
     private final Value<Boolean> preferEChests = new Value<>("EChests", true);
 
     public SelfFillModule() {
-        super("SelfFill", Category.COMBAT);
+        super("InstantSelfFill", Category.COMBAT);
     }
 
     @SubscribeEvent

@@ -2,6 +2,7 @@ package me.pignol.swift.client.modules.render;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.pignol.swift.api.util.text.ChatUtil;
+import me.pignol.swift.api.util.text.TextColor;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
 import me.pignol.swift.api.value.Value;
@@ -13,6 +14,8 @@ public class DickheadESP
     public Value<Boolean> changeOwn = (new Value<Boolean>("NameChange", false));
     public final Value<String> enemyName = (new Value<String>("Name To Change", "Name to change..."));
     public final Value<String> enemyNewName = (new Value<String>("Name", "New Name Here..."));
+    public final Value<Boolean> color = (new Value<Boolean>("Colored", false));
+    public final Value<TextColor.Color> nameColor = new Value<>("NameColor", TextColor.Color.WHITE, v -> color.getValue());
     private static DickheadESP instance;
 
     public DickheadESP() {

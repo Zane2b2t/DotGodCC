@@ -1,13 +1,13 @@
 [
     {
-        "modid": "swift",
-        "name": "Swift",
-        "description": "4",
-        "version": "4",
+        "modid": "butterfly",
+        "name": "Butterfly",
+        "description": "DotGod.CC",
+        "version": "2.2.3",
         "mcversion": "1.12.2",
         "url": "",
         "updateUrl": "",
-        "authorList": ["hollow", "chardnol"],
+        "authorList": ["hollow", "chardnol", "ZANE"],
         "credits": "4",
         "logoFile": "",
         "screenshots": [],

@@ -15,7 +15,7 @@ public class SprintModule extends Module {
 
 
     public SprintModule() {
-        super("Sprint", Category.MOVEMENT);
+        super("Sprint", Category.PLAYER);
         INSTANCE = this;
     }
 

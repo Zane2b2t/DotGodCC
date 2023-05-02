@@ -24,7 +24,7 @@ public class BowSpoof extends Module {
     private long lastHsTime;
     long percent;
 
-    public BowSpoof() { super("BowSpoof", Category.COMBAT); }
+    public BowSpoof() { super("BowManip", Category.COMBAT); }
 
     private final Value<Boolean> bypass = new Value<>("Bypass", true);
     private final Value<Boolean> autoFire = new Value<>("AutoFire", true);

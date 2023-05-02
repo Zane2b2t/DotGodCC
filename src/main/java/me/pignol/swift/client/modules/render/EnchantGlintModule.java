@@ -16,7 +16,7 @@ public class  EnchantGlintModule extends Module {
     public final Value<Boolean> rainbow = new Value<>("Rainbow", false);
 
     public EnchantGlintModule() {
-        super("EnchantGlint", Category.RENDER, false, false);
+        super("GlintModify", Category.RENDER, false, false);
     }
 
 }

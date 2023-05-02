@@ -55,7 +55,7 @@ public class ModuleManager {
         addModule(new BowSpoof());
         addModule(new HoleFillerModule());
         addModule(new CriticalsModule());
-        addModule(new SelfTrap());
+        addModule(new InstantSelfTrap());
 
         //RENDER
         addModule(SkeletonModule.INSTANCE);

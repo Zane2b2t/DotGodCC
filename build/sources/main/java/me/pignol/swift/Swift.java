@@ -14,10 +14,10 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = Swift.MOD_ID, name = Swift.MOD_NAME, version = Swift.VERSION)
 public class Swift {
 
-    public static final Logger LOGGER = LogManager.getLogger("Swift");
-    public static final String MOD_ID = "swift";
-    public static final String MOD_NAME = "Swift";
-    public static final String VERSION = "1.1.1";
+    public static final Logger LOGGER = LogManager.getLogger("Butterfly");
+    public static final String MOD_ID = "butterfly";
+    public static final String MOD_NAME = "Butterfly";
+    public static final String VERSION = "v2.2.3";
 
     @Mod.Instance(MOD_ID)
     private static Swift INSTANCE;
@@ -36,7 +36,7 @@ public class Swift {
         HoleManager.getInstance().load();
         LookUpManager.getInstance().init();
         Runtime.getRuntime().addShutdownHook(new Thread(this::unload));
-        LOGGER.info("Loaded swift in " + (System.currentTimeMillis() - ms) + "ms");
+        LOGGER.info("Loaded butterfly in " + (System.currentTimeMillis() - ms) + "ms");
     }
 
     @Mod.EventHandler

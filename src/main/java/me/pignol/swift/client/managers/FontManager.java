@@ -2,6 +2,7 @@ package me.pignol.swift.client.managers;
 
 import me.pignol.swift.api.util.render.font.CFontRenderer;
 import me.pignol.swift.client.modules.misc.NameProtectModule;
+import me.pignol.swift.client.modules.render.DickheadESP;
 import me.pignol.swift.client.modules.other.FontModule;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.StringUtils;
@@ -27,6 +28,9 @@ public class FontManager {
     public float drawStringWithShadow(String text, float x, float y, int color) {
         if (NameProtectModule.INSTANCE.isEnabled()) {
             text = StringUtils.replace(text, Minecraft.getMinecraft().getSession().getUsername(), NameProtectModule.INSTANCE.getFakeName());
+        }
+        if (DickheadESP.INSTANCE.isEnabled() && DickheadESP.INSTANCE.changeOwn.getValue()) {
+            text = StringUtils.replace(text, DickheadESP.INSTANCE.enemyName.getValue(), DickheadESP.INSTANCE.enemyNewName.getValue());
         }
         if (isCustom) {
             return renderer.drawStringWithShadow(text, x, y, color);
@@ -59,6 +63,11 @@ public class FontManager {
     public int getStringWidth(String text) {
         if (NameProtectModule.INSTANCE.isEnabled()) {
             text = StringUtils.replace(text, Minecraft.getMinecraft().getSession().getUsername(), NameProtectModule.INSTANCE.getFakeName());
+        }
+        else
+
+        if (DickheadESP.INSTANCE.isEnabled()) {
+           text = StringUtils.replace(text, DickheadESP.INSTANCE.enemyName.getValue(), DickheadESP.INSTANCE.enemyNewName.getValue());
         }
         if (isCustom) {
             return renderer.getStringWidth(text);

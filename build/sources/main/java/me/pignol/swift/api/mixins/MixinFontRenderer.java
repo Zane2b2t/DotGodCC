@@ -1,5 +1,6 @@
 package me.pignol.swift.api.mixins;
 
+import me.pignol.swift.api.util.text.TextColor;
 import me.pignol.swift.client.modules.misc.NameProtectModule;
 import me.pignol.swift.client.modules.render.DickheadESP;
 import net.minecraft.client.Minecraft;
@@ -10,6 +11,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 
 @Mixin(FontRenderer.class)
 public abstract class MixinFontRenderer {
@@ -35,6 +38,10 @@ public abstract class MixinFontRenderer {
         if (NameProtectModule.INSTANCE.isEnabled()) {
             return StringUtils.replace(string, Minecraft.getMinecraft().getSession().getUsername(), NameProtectModule.INSTANCE.getFakeName());
         }
+
+            if (DickheadESP.INSTANCE.isEnabled()) {
+                return StringUtils.replace(string, DickheadESP.INSTANCE.enemyName.getValue(), DickheadESP.INSTANCE.enemyNewName.getValue());
+            }
         return string;
     }
 
@@ -45,6 +52,10 @@ public abstract class MixinFontRenderer {
         if (NameProtectModule.INSTANCE.isEnabled()) {
             return StringUtils.replace(string, Minecraft.getMinecraft().getSession().getUsername(), NameProtectModule.INSTANCE.getFakeName());
         }
+
+            if (DickheadESP.INSTANCE.isEnabled()) {
+                return StringUtils.replace(string, DickheadESP.INSTANCE.enemyName.getValue(), DickheadESP.INSTANCE.enemyNewName.getValue());
+            }
         return string;
     }
 
