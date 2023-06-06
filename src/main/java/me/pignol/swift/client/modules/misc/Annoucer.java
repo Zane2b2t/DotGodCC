@@ -32,6 +32,6 @@ public class Annoucer extends Module {
         }
         double randomNum = ThreadLocalRandom.current().nextDouble(1.0, 200.0);
 
-        mc.player.sendChatMessage("I just flew " + new DecimalFormat("0.##").format(randomNum) + " meters like a butterfly thanks to DotGod.CC!");
+        mc.player.sendChatMessage("I just flew " + new DecimalFormat("0.##").format(randomNum) + " like a bullet coming out of the intervention thanks to ASCENDANCY V3!");
     }
 }
