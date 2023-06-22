@@ -99,6 +99,10 @@ public class Module {
     public boolean isNull() {
         return mc.world == null || mc.player == null;
     }
+    public static boolean fullNullCheck() {
+        return mc.player == null || mc.world == null;
+    }
+    public static boolean spawnCheck() {return (mc.player.ticksExisted > 15);}
 
     public void toggle() {
         setEnabled(!enabled);

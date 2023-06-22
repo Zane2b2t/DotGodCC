@@ -128,6 +128,7 @@ public class ModuleManager {
 
         //MISC
         addModule(new Annoucer());
+        addModule(new AnnoucerNew());
         addModule(TotemPopCounterModule.INSTANCE);
         addModule(new EgapFinder());
         addModule(BetterTabModule.INSTANCE);

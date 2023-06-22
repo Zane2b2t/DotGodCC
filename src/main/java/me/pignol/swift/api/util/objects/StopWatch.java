@@ -7,6 +7,15 @@ public class StopWatch {
     public StopWatch() {
         this.current = System.currentTimeMillis();
     }
+    public boolean passedS(double s) {
+        return getMs(System.nanoTime() - this.current) >= ((long) (s * 1000.0));
+    }
+    public boolean passedMs(long ms) {
+        return getMs(System.nanoTime() - this.current) >= ms;
+    }
+    public long getMs(long time) {
+        return time / 1000000;
+    }
 
     public boolean passed(final long delay) {
         return System.currentTimeMillis() - this.current >= delay;

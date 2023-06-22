@@ -5,9 +5,32 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.*;
 
 public class MathUtil {
 
+    private static final Random random = new Random();
+
+    public static float randomBetween(float min, float max) {
+        return min + (new Random().nextFloat() * (max - min));
+    }
+
+    public static int randomBetween(int min, int max) {
+        return min + (new Random().nextInt() * (max - min));
+    }
+
+    public static int getRandom(final int min, final int max) {
+        return min + random.nextInt(max - min + 1);
+    }
+
+    public static double getRandom(final double min, final double max) {
+        return MathHelper.clamp(min + random.nextDouble() * max, min, max);
+    }
+
+    public static float getRandom(final float min, final float max) {
+        return MathHelper.clamp(min + random.nextFloat() * max, min, max);
+    }
     public static float rad(final float angle) {
         return (float) (angle * Math.PI / 180);
     }

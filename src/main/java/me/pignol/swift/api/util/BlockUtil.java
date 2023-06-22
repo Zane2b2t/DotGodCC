@@ -173,6 +173,10 @@ public class BlockUtil {
 
         return 2;
     }
+    public static Block getBlock(BlockPos pos) {
+        return getState(pos).getBlock();
+    }
+
 
     public static List<Vec3d> getBlockBlocks(Entity entity) {
         List<Vec3d> vec3ds = new ArrayList<>();
@@ -198,6 +202,8 @@ public class BlockUtil {
         vec3ds.add(entity.getPositionVector());
         return vec3ds;
     }
+
+
 
     public static List<Vec3d> targets(Vec3d vec3d, boolean antiScaffold, boolean antiStep, boolean legs, boolean platform, boolean antiDrop, boolean needsHelping) {
         List<Vec3d> placeTargets = new ArrayList<>();
