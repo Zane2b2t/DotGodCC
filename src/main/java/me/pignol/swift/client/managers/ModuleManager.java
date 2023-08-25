@@ -41,6 +41,10 @@ public class ModuleManager {
         addModule(ClickGuiModule.INSTANCE);
 
         //COMBAT
+        addModule((new ActiveGapple()));
+        addModule((new DesyncAura()));
+        addModule(new InstantWeb());
+        addModule(new AntiHitbox());
         addModule(AuraModule.INSTANCE);
         addModule(new Instant32k());
         addModule(new AutoNomadHut());
@@ -56,8 +60,10 @@ public class ModuleManager {
         addModule(new HoleFillerModule());
         addModule(new CriticalsModule());
         addModule(new InstantSelfTrap());
+        addModule(new RuskiExploit());
 
         //RENDER
+        addModule(new BetterChat());
         addModule(SkeletonModule.INSTANCE);
         addModule(NoRenderModule.INSTANCE);
         addModule(Starlink.getInstance());
@@ -68,26 +74,17 @@ public class ModuleManager {
         addModule(EnchantGlintModule.INSTANCE);
         addModule(ViewmodelModule.INSTANCE);
         addModule(FullBrightModule.INSTANCE);
-        addModule(NoInterpolationModule.INSTANCE);
         addModule(CrosshairModule.INSTANCE);
         addModule(AspectRatio.INSTANCE);
-        addModule(HeadRotations.INSTANCE);
         addModule(ViewClipModule.INSTANCE);
         addModule(Chams.INSTANCE);
-        addModule(NoArmorRender.getInstance());
-        addModule(NoBob.getInstance());
         addModule(new ChunkFinder());
         addModule(new Freecam());
         addModule(new EntityESP());
         addModule(new BlockHighlight());
-        addModule(new NoWeather());
         addModule(new ShulkerViewer());
-        addModule(new PacketESP());
         addModule(new Search());
-        addModule(new ItemESP());
         addModule(new TracersModule());
-        addModule(new VoidESP());
-        addModule(new LogoutSpotsModule());
         addModule(new HoleESPModule());
 
         //PLAYER

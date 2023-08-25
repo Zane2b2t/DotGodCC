@@ -25,7 +25,7 @@ public class Arrows extends Module {
     private final Value<Integer> green = new Value<>("Green",0,0,255);
     private final Value<Integer> blue = new Value<>("Blue",0,0,255);
 
-    public Arrows(){ super("Arrows", Category.RENDER);
+    public Arrows(){ super("AntiChainPop", Category.RENDER);
     }
 
     private final List<Bullet> bullets = new CopyOnWriteArrayList<Bullet>();

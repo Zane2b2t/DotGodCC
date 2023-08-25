@@ -17,7 +17,7 @@ public class ChunkFinder extends Module {
     private final ArrayList<ChunkPos> newChunks = new ArrayList<>();
 
     public ChunkFinder() {
-        super("ChunkFinder", Category.RENDER);
+        super("Compass", Category.RENDER);
         INSTANCE = this;
     }
 

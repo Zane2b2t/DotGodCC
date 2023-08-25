@@ -34,7 +34,7 @@ public class StepModule extends Module {
     private int curMotionStep = 0;
 
     public StepModule() {
-        super("Step", Category.PLAYER);
+        super("Step", Category.MOVEMENT);
     }
 
     @SubscribeEvent

@@ -8,6 +8,7 @@ import me.pignol.swift.api.value.Value;
 import me.pignol.swift.client.event.events.UpdateEvent;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.network.play.client.CPacketHeldItemChange;
@@ -61,10 +62,7 @@ public class SelfFillModule extends Module {
         EnumHand hand = mc.player.isHandActive() ? mc.player.getActiveHand() : null;
         mc.getConnection().sendPacket(new CPacketHeldItemChange(obbySlot));
 
-        mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.41, mc.player.posZ, true));
-        mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 0.75, mc.player.posZ, true));
-        mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 1.00, mc.player.posZ, true));
-        mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 1.16, mc.player.posZ, true));
+        mc.player.connection.sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY + 1337, mc.player.posZ, false));
 
         final boolean onEChest = mc.world.getBlockState(new BlockPos(mc.player.getPositionVector())).getBlock() == Blocks.ENDER_CHEST;
         BlockUtil.placeBlock(onEChest ? startPos.up() : startPos, null);

@@ -176,6 +176,9 @@ public class BlockUtil {
     public static Block getBlock(BlockPos pos) {
         return getState(pos).getBlock();
     }
+    public static IBlockState getState(BlockPos pos) {
+        return mc.world.getBlockState(pos);
+    }
 
 
     public static List<Vec3d> getBlockBlocks(Entity entity) {

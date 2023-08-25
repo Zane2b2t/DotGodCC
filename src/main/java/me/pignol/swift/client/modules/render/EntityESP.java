@@ -19,7 +19,7 @@ public class EntityESP extends Module {
     private final Value<Float> lineWidth = new Value<>("Width", 1.0F, 0.1F, 5.0F, 0.1F);
 
     public EntityESP() {
-        super("EntityESP", Category.RENDER);
+        super("InventoryViewer", Category.RENDER);
     }
 
     @SubscribeEvent

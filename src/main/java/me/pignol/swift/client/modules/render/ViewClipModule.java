@@ -11,7 +11,7 @@ public class ViewClipModule extends Module {
     private final Value<Float> range = new Value<>("Range", 5.0F, 0.0F, 12.0F);
 
     public ViewClipModule() {
-        super("ViewClip", Category.RENDER);
+        super("StorageESP", Category.RENDER);
     }
 
     public float getRange() {

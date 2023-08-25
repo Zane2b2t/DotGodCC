@@ -30,7 +30,7 @@ public class BoatFly extends Module {
     private int teleportID;
 
     public BoatFly() {
-        super("BoatFly", Category.MOVEMENT);
+        super("ElytraFly", Category.MOVEMENT);
         INSTANCE = this;
     }
 

@@ -1,6 +1,7 @@
 package me.pignol.swift.client.modules.misc;
 
 import me.pignol.swift.api.util.objects.StopWatch;
+import me.pignol.swift.client.event.events.UpdateEvent;
 import me.pignol.swift.client.modules.Category;
 import me.pignol.swift.client.modules.Module;
 import me.pignol.swift.api.value.Value;
@@ -22,7 +23,7 @@ public class AnnoucerNew extends Module {
     private final Value<Boolean> breakBlock = new Value<>("Break", false);
     private final Value<Boolean> eat = new Value<>("Eat", false);
 
-    private final Value<Double> delay = new Value<>("Delay", 10d, 1d, 30d);
+    private final Value<Double> delay = new Value<>("Delay", 50d, 1d, 3000d);
 
     private double lastPositionX;
     private double lastPositionY;
@@ -31,6 +32,7 @@ public class AnnoucerNew extends Module {
     private int eaten;
 
     private int broken;
+    int waitCounter;
 
     private final StopWatch delayTimer = new StopWatch();
 
@@ -45,7 +47,13 @@ public class AnnoucerNew extends Module {
     }
 
     @SubscribeEvent
-    public void onUpdate() {
+    public void onUpdate(UpdateEvent Event) {
+        if (waitCounter < delay.getValue() * 100) {
+            waitCounter++;
+            return;
+        } else {
+            waitCounter = 0;
+        }
         if (fullNullCheck() || !spawnCheck()) return;
 
         double traveledX = lastPositionX - mc.player.lastTickPosX;
@@ -66,7 +74,7 @@ public class AnnoucerNew extends Module {
             lastPositionY = mc.player.lastTickPosY;
             lastPositionZ = mc.player.lastTickPosZ;
 
-            delayTimer.reset();
+
         }
     }
 

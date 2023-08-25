@@ -16,7 +16,7 @@ public class FastLiquid extends Module {
     private final Value<Float> up = new Value<>("UpMotion", 0.1f, 0.01f, 1.0f);
 
     public FastLiquid() {
-        super("FastLiquid", Category.MOVEMENT);
+        super("LiquidSpeed", Category.MOVEMENT);
     }
 
     @SubscribeEvent

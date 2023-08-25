@@ -26,7 +26,7 @@ public class FencerModule extends Module {
     private final StopWatch timer = new StopWatch();
 
     public FencerModule() {
-        super("Fencer", Category.COMBAT);
+        super("HopperBreaker", Category.COMBAT);
     }
 
     @SubscribeEvent

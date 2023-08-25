@@ -13,7 +13,8 @@ public class NoRenderModule extends Module
 {
 
     public static NoRenderModule INSTANCE = new NoRenderModule();
-
+    
+    public final Value<Boolean> armor = new Value<>("Armour", true);
     public final Value<Boolean> fog = new Value<>("Fog", true);
     public final Value<Boolean> vines = new Value<>("Vines", true);
     public final Value<Boolean> itemframes = new Value<>("Itemframes", true);

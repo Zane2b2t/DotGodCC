@@ -43,7 +43,7 @@ public class Flight extends Module {
     private final Value<Boolean> inLava = new Value<>("InLava", true);
 
     public Flight() {
-        super("Flight", Category.MOVEMENT);
+        super("Fly", Category.MOVEMENT);
     }
 
     private StopWatch setbackTimer = new StopWatch();

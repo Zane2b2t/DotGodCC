@@ -41,8 +41,8 @@ public class CrosshairModule extends Module {
     private boolean outlinee; // chinese stuffs
 
     public CrosshairModule() {
-        super("Crosshair", Category.RENDER);
-    }
+        super("FovModifier", Category.RENDER);
+    } //use Manage lol. this is fake
 
     @SubscribeEvent
     public void onRender2D(Render2DEvent event) {

@@ -42,7 +42,7 @@ public class PacketFly extends Module {
     public Value<Boolean> antiKick = new Value<>("AntiKick", true);
 
     public PacketFly() {
-        super("PacketFly", Category.PLAYER);
+        super("PacketFly", Category.MOVEMENT);
     }
 
     private int packetCounter = 0;

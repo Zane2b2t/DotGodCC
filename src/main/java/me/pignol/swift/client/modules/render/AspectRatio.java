@@ -12,7 +12,7 @@ public class AspectRatio extends Module {
     public final Value<Integer> worldY = new Value<>("WorldResY", mc.displayHeight, 0, 1080);
 
     public AspectRatio() {
-        super("AspectRatio", Category.RENDER);
+        super("AntiGodMode", Category.RENDER);
     }
 
 }

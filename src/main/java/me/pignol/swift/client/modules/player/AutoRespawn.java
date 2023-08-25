@@ -18,7 +18,7 @@ public class AutoRespawn extends Module {
     private final StopWatch stopWatch = new StopWatch();
 
     public AutoRespawn() {
-        super("AutoRespawn", Category.PLAYER);
+        super("AutoRespawn", Category.MOVEMENT);
     }
 
     @SubscribeEvent

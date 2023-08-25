@@ -19,7 +19,7 @@ public class FakeRotationModule extends Module {
     public final Value<Boolean> pauseOnMiddleClick = new Value<>("MiddleClick", true, v -> pauseOnXp.getValue());
 
     public FakeRotationModule() {
-        super("FakeRotation", Category.MISC);
+        super("FakeRotation", Category.PLAYER);
     }
 
     @SubscribeEvent
