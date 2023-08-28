@@ -41,6 +41,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
+import java.util.ArrayList;
+
 import static net.minecraft.network.play.client.CPacketUseEntity.Action.ATTACK;
 
 
@@ -57,10 +59,12 @@ public class AutoCrystalElite extends Module {
     //BREAK
     public Value<Boolean> explode = (new Value<>("Break", true, v -> setting.getValue() == Values.BREAK));
     public Value<Boolean> predict = (new Value<>("Predict", true, v -> setting.getValue() == Values.BREAK));
+    public Value<Boolean> predict2 = (new Value<>("Boost", true, v -> setting.getValue() == Values.BREAK));
+
     public Value<Integer> breakDelay = (new Value<>("BreakDelay", 0, 0, 1000, v -> setting.getValue() == Values.BREAK && explode.getValue()));
     public Value<Float> breakRange = (new Value<>("BreakRange", 6.0f, 0.0f, 6.0f, v -> setting.getValue() == Values.BREAK && explode.getValue()));
     public Value<Float> breakTrace = (new Value<>("BreakTrace", 6.0f, 0.0f, 6.0f, v -> setting.getValue() == Values.BREAK && explode.getValue()));
-    //public Value<Boolean> inhibit = new Value<>("Inhibit", false, v -> setting.getValue() == Values.BREAK && explode.getValue());
+    public Value<Boolean> inhibit = new Value<>("Inhibit", false, v -> setting.getValue() == Values.BREAK && explode.getValue());
 
     //RENDER
     public Value<Boolean> render = (new Value<>("Render", true, v -> setting.getValue() == Values.RENDER));
@@ -73,11 +77,12 @@ public class AutoCrystalElite extends Module {
 
     //MISC
     public Value<Logic> logic = new Value<>("Logic", Logic.BreakPlace, v -> setting.getValue() == Values.MISC);
-    public Value<Boolean> await = new Value<>("Await", false);
-    public Value<Boolean> fastRemove = new Value<>("FastRemove", false);
-    public Value<Boolean> ping = new Value<>("PingCalc", false);
-    public Value<Boolean> brr = new Value<>("BRRR", false);
-    public Value<SetDead> setDead = new Value<>("SetDead", SetDead.Both, v -> setting.getValue() == Values.MISC);
+    public Value<Boolean> await = new Value<>("Await", false, v -> setting.getValue() == Values.MISC);
+    public Value<Boolean> fastRemove = new Value<>("FastRemove", false, v -> setting.getValue() == Values.MISC);
+    public Value<Boolean> brr = new Value<>("BRRR", false, v -> setting.getValue() == Values.MISC);
+    public Value<Boolean> ping = new Value<>("PingCalc", false, v -> setting.getValue() == Values.MISC && brr.getValue());
+
+    public Value<SetDead> setDead = new Value<>("SetDead", SetDead.None, v -> setting.getValue() == Values.MISC);
     public Value<Float> minDamage = (new Value<>("MinDamage", 4.0f, 0.1f, 36.0f, 0.1F, v -> setting.getValue() == Values.MISC));
     public Value<Float> facePlace = (new Value<>("FacePlace", 8.0f, 0.1f, 36.0f, 0.1F, v -> setting.getValue() == Values.MISC));
     public Value<Float> maxSelf = (new Value<>("MaxSelf", 8.0f, 0.1f, 36.0f, v -> setting.getValue() == Values.MISC));
@@ -85,6 +90,7 @@ public class AutoCrystalElite extends Module {
     public Value<Float> range = (new Value<>("Range", 12.0f, 0.1f, 20.0f, 0.1F, v -> setting.getValue() == Values.MISC));
     private final Value<Integer> switchCooldown = (new Value<>("Cooldown", 500, 0, 1000, 25, v -> setting.getValue() == Values.MISC));
     public Value<Switch> switchValue = new Value<>("Switch", Switch.NONE, v -> setting.getValue() == Values.MISC);
+    public Value<Boolean> waitForBreak = new Value<>("WaitForBreak", false, v -> setting.getValue() == Values.MISC);
     public Value<Boolean> second = (new Value<>("Second", false, v -> setting.getValue() == Values.MISC));
     public Value<Boolean> soundRemove = (new Value<>("SoundRemove", false, v -> setting.getValue() == Values.MISC));
     public Value<Boolean> multiTask = new Value<>("MultiTask", true, v -> setting.getValue() == Values.MISC);
@@ -104,6 +110,8 @@ public class AutoCrystalElite extends Module {
     private final Object2LongOpenHashMap<EntityPlayer> popMap = new Object2LongOpenHashMap<>();
 
     private final ObjectSet<BlockPos> placedPos = new ObjectOpenHashSet<>();
+    ArrayList<EntityEnderCrystal> crystals = new ArrayList<>();
+
     private final StopWatch breakTimer = new StopWatch();
     private final StopWatch placeTimer = new StopWatch();
 
@@ -117,7 +125,7 @@ public class AutoCrystalElite extends Module {
     private boolean hasBroken = false;
 
     public AutoCrystalElite() {
-        super("AutoCrystalEliteElite", Category.COMBAT);
+        super("AutoCrystalElite", Category.COMBAT);
     }
     public void swingHand() {
         if (mc.player.getHeldItemMainhand().getItem().equals(Items.END_CRYSTAL)) {
@@ -131,27 +139,31 @@ public class AutoCrystalElite extends Module {
     @SubscribeEvent
     public void onPacketReceive(PacketEvent.Receive event) {
         if (event.getPacket() instanceof SPacketSpawnObject && explode.getValue() && predict.getValue()) {
-            final SPacketSpawnObject packet = (SPacketSpawnObject) event.getPacket();
-            if (packet.getType() == 51) {
-                final BlockPos pos = new BlockPos(packet.getX(), packet.getY() - 1, packet.getZ());
+            final SPacketSpawnObject Spacket = (SPacketSpawnObject) event.getPacket();
+            if (Spacket.getType() == 51) {
+                EntityEnderCrystal crystal = (EntityEnderCrystal) mc.world.getEntityByID(Spacket.getEntityID());
+
+                final BlockPos pos = new BlockPos(Spacket.getX(), Spacket.getY() - 1, Spacket.getZ());
                 if (placedPos.remove(pos)) { //returns true if its in the list but removes it at the same time
                     CPacketUseEntity packetUseEntity = new CPacketUseEntity();
-                    packetUseEntity.entityId = packet.getEntityID();
+                    packetUseEntity.entityId = Spacket.getEntityID();
                     packetUseEntity.action = ATTACK;
                     mc.getConnection().sendPacket(packetUseEntity);
                     mc.getConnection().sendPacket(new CPacketAnimation(EnumHand.MAIN_HAND));
                     if (sequential.getValue() && lastPos != null && lastPos.equals(pos)) {
                         mc.getConnection().sendPacket(new CPacketPlayerTryUseItemOnBlock(lastPos, EnumFacing.UP, offHand ? EnumHand.OFF_HAND : EnumHand.MAIN_HAND, 0.5F, 1.0F, 0.5F));
                     }
+                    (mc.getConnection()).sendPacket(new CPacketUseEntity(crystal));
+                    if (predict2.getValue()) {
+                        packetUseEntity.entityId = Spacket.getEntityID();
+                        packetUseEntity.action = ATTACK;
+                    handleFastRemove(crystal);
+                    }
                     breakTimer.reset();
                 }
-                if (predict.getValue()) {
-                    CPacketUseEntity packetUseEntity = new CPacketUseEntity();
-                    packetUseEntity.entityId = packet.getEntityID();
-                    packetUseEntity.action = ATTACK;
-                }
+
                 if (brr.getValue() && event.getPacket() instanceof CPacketPlayerTryUseItemOnBlock) {
-                   // CPacketPlayerTryUseItemOnBlock packet = (CPacketPlayerTryUseItemOnBlock) event.getPacket();
+                    CPacketPlayerTryUseItemOnBlock packet = (CPacketPlayerTryUseItemOnBlock) event.getPacket();
                     Entity highestEntity = null;
                     int entityId = 0;
                     for (Entity entity : mc.world.loadedEntityList) {
@@ -192,6 +204,10 @@ public class AutoCrystalElite extends Module {
                     for (Entity entity : mc.world.loadedEntityList) {
                         if (entity instanceof EntityEnderCrystal && entity.getDistanceSq(packet.getX(), packet.getY(), packet.getZ()) < 36) {
                             entity.setDead();
+                            if (setDead.getValue() == SetDead.Both) {
+                                mc.world.removeEntity(entity);
+                                mc.world.removeEntityDangerously(entity);
+                            }
                         }
                     }
                 });
@@ -321,8 +337,15 @@ public class AutoCrystalElite extends Module {
                 return;
             }
         }
-        if (explode.getValue() && breakTimer.passed(breakDelay.getValue()) && (offHand || mainHand || switchValue.getValue() != Switch.NONE)) {
-            Entity crystal = calculateBreak(currentTarget);
+        final Entity entityEnderCrystal = calculateBreak(currentTarget);
+
+        Entity crystal = calculateBreak(currentTarget);
+        final boolean isCrystalNotListed = !inhibit.getValue() || !crystals.contains(entityEnderCrystal);
+
+        if (explode.getValue() && breakTimer.passed(breakDelay.getValue()) && (offHand || mainHand)) {
+            crystals.add((EntityEnderCrystal) entityEnderCrystal);
+
+            crystal = calculateBreak(currentTarget);
             if (crystal != null) {
                 if (rotate.getValue()) {
                     float[] rotations = RotationUtil.getRotations(crystal.posX, crystal.posY, crystal.posZ);
@@ -344,6 +367,11 @@ public class AutoCrystalElite extends Module {
 
     public void doPlace() {
         if (place.getValue() && placeTimer.passed(placeDelay.getValue()) && (offHand || mainHand || switchValue.getValue() != Switch.NONE)) {
+            if (!waitForBreak.getValue()) {
+                if (!hasBroken) {
+                    return;
+                }
+            }
             BlockPos pos = calculatePlace();
             if (pos != null) {
                 placedPos.add(pos);
@@ -491,7 +519,8 @@ public class AutoCrystalElite extends Module {
     public enum SetDead {
         SetDed,
         Remove,
-        Both
+        Both,
+        None
     }
 
     public enum Values {

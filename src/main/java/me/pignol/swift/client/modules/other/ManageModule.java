@@ -40,7 +40,7 @@ public class ManageModule extends Module {
     public final Value<Boolean> debugRotations = new Value<>("DebugRotations", true);
 
     public ManageModule() {
-        super("Manage", Category.OTHER, true, false);
+        super("Blocks", Category.OTHER, true, false);
         setDrawn(false);
         MinecraftForge.EVENT_BUS.register(this);
     }
