@@ -9,7 +9,7 @@ public class ViewmodelModule extends Module {
     public static ViewmodelModule INSTANCE = new ViewmodelModule();
 
     public static boolean rendering;
-
+    public final Value<Boolean> dot5Mode = new Value<>("CancelEat", true);
     public final Value<Float> translateX = new Value<>("TranslateX", 0f, -1f, 1f);
     public final Value<Float> translateY = new Value<>("TranslateY", 0f, -1f, 1f);
     public final Value<Float> translateZ = new Value<>("TranslateZ", 0f, -1f, 1f);

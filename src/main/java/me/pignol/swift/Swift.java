@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.opengl.Display;
 
 @Mod(modid = Swift.MOD_ID, name = Swift.MOD_NAME, version = Swift.VERSION)
 public class Swift {
@@ -24,6 +25,7 @@ public class Swift {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        Display.setTitle("Butterfly");
         long ms = System.currentTimeMillis();
         FileManager.getInstance().init();
         FriendManager.getInstance().getFriends();

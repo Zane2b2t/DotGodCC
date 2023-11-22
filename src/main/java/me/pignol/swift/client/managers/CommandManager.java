@@ -14,7 +14,7 @@ public class CommandManager {
 
     private final ObjectArrayList<Command> commands = new ObjectArrayList<>();
 
-    private String prefix = ".";
+    private String prefix = "-";
 
     public static CommandManager getInstance() {
         return INSTANCE;

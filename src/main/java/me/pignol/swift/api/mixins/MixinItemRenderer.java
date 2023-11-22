@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -32,6 +33,7 @@ public abstract class MixinItemRenderer {
     public Minecraft mc;
 
     public boolean injection = true;
+    public boolean bom = false;
 
     @Shadow
     public abstract void renderItemInFirstPerson(AbstractClientPlayer player, float p_187457_2_, float p_187457_3_, EnumHand hand, float p_187457_5_, ItemStack stack, float p_187457_7_);
@@ -102,9 +104,17 @@ public abstract class MixinItemRenderer {
     public void renderItemSide(EntityLivingBase entitylivingbaseIn, ItemStack heldStack, ItemCameraTransforms.TransformType transform, boolean leftHanded, CallbackInfo ci) {
         boolean left = transform == ItemCameraTransforms.TransformType.FIRST_PERSON_LEFT_HAND;
         boolean right = transform == ItemCameraTransforms.TransformType.FIRST_PERSON_RIGHT_HAND;
+        if (mc.player.getHeldItemMainhand().getItem().equals(Items.GOLDEN_APPLE) && (mc.gameSettings.keyBindUseItem.isKeyDown()) && ViewmodelModule.INSTANCE.dot5Mode.getValue()) {
+            bom = true; //im very smart
+        }
         ViewmodelModule.rendering = true;
-        if ((left || right) && ViewmodelModule.INSTANCE.isEnabled()) {
+        if ((left) && ViewmodelModule.INSTANCE.isEnabled()) {
             GlStateManager.scale(ViewmodelModule.INSTANCE.scaleX.getValue(), ViewmodelModule.INSTANCE.scaleY.getValue(), ViewmodelModule.INSTANCE.scaleZ.getValue());
+            if ((right && !bom)) {
+                GlStateManager.scale(ViewmodelModule.INSTANCE.scaleX.getValue(), ViewmodelModule.INSTANCE.scaleY.getValue(), ViewmodelModule.INSTANCE.scaleZ.getValue());
+            }
+
+
             /*GlStateManager.rotate(ViewmodelModule.INSTANCE.rotateX.getValue(), 1, 0, 0);
             GlStateManager.rotate(ViewmodelModule.INSTANCE.rotateY.getValue(), 0, 1, 0);
             GlStateManager.rotate(ViewmodelModule.INSTANCE.rotateZ.getValue(), 0, 0, 1);*/

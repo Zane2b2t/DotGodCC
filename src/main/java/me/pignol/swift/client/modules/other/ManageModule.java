@@ -29,10 +29,10 @@ public class ManageModule extends Module {
     public final Value<Boolean> forgeHax = new Value<>("ForgeHax", false);
     public final Value<Boolean> prefix = new Value<>("Prefix", false);
     public final Value<Boolean> rainbowPrefix = new Value<>("PrefixRainbow", false);
-    public final Value<TextColor.Color> bracketColor = new Value<>("BracketColor", TextColor.Color.WHITE, v -> prefix.getValue());
-    public final Value<TextColor.Color> nameColor = new Value<>("NameColor", TextColor.Color.DARK_GRAY, v -> prefix.getValue());
+    public final Value<TextColor.Color> bracketColor = new Value<>("BracketColor", TextColor.Color.DARK_PURPLE, v -> prefix.getValue());
+    public final Value<TextColor.Color> nameColor = new Value<>("NameColor", TextColor.Color.LIGHT_PURPLE, v -> prefix.getValue());
 
-    public final Value<String> clientName = new Value<>("ClientName", "Swift");
+    public final Value<String> clientName = new Value<>("ClientName", "DotGod.CC");
 
     public final Value<Integer> tabbedFps = new Value<>("TabbedFPS", 60, 1, 240);
 
